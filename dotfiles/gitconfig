@@ -1,0 +1,11 @@
+[user]
+	name = Giampaolo Guiducci
+	email = stirner@gmail.com
+[color]
+	ui = auto
+[alias]
+	lol = log --decorate --pretty=oneline --abbrev-commit
+[gui]
+	spellingdictionary = none
+[guitool "vim"]
+	cmd = gvim $FILENAME
