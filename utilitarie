@@ -1,0 +1,78 @@
+
+function every () {
+    DELAY=${1}
+    shift
+    while :;
+    do
+        echo -n "start: "; date
+        $@;
+        echo -n "end: " ; date; echo
+        sleep ${DELAY};
+    done
+}
+
+alias everyday='every 1d'
+alias everyhour='every 1h'
+
+alias yargs='xargs -n 1 -d \\n -I {}'
+
+alias incognito='chromium --incognito'
+
+alias functions='declare -f'
+
+function xsync () {
+    DIR1=${1}
+    DIR2=${2}
+    rsync --progress --recursive --ignore-existing --size-only --whole-file ${DIR1} ${DIR2}
+    rsync --progress --recursive --ignore-existing --size-only --whole-file ${DIR2} ${DIR1}
+}
+
+alias zenfone='sudo jmtpfs /mnt/zenfone5 -o allow_other'
+alias zensync='xsync /mnt/zenfone5/Scheda\ SD/Music/ /home/gg/personal/music/portable'
+
+function imgurandom()
+{
+    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 5 | head -n 1 | awk '{ print "http://i.imgur.com/" $1 ".jpg" }' | xargs display
+}
+
+function webm()
+{
+	ffmpeg -i $1 -c:v libvpx -b:v 1M -c:a libvorbis $1.webm
+}
+
+function wav2mp3 () {
+    lame --resample 44.1 -q 0 --vbr-new -V 0 "$1" -o "${1%.*}.mp3";
+}
+
+function ricorrenze () {
+    tmux new -d -s ricorrenze
+
+    tmux split-window -h -t ricorrenze -c "${HOME}/y/articles"
+    tmux send "everyday ${HOME}/x/prj/2015/hoard/feed/feedhoarder.py" Enter
+
+    tmux split-window -v -t ricorrenze -c "${HOME}/y/pics/tumblr" 
+    tmux send "everyday python ~/x/prj/2015/hoard/tumblr/dump.py" Enter
+
+    tmux select-pane -t ricorrenze.top-left
+    tmux split-window -v -t ricorrenze -c "${HOME}/y/dumps/mu" 
+    tmux send "everyhour ~/x/prj/2015/hoard/4chan/mu.py" Enter
+
+    tmux select-pane -t ricorrenze.top-left
+
+    tmux attach -t ricorrenze
+}
+
+function unp7m {
+    openssl smime -decrypt -in "${1}" -inform DER -verify -noverify -out "${1%.*}"
+}
+
+function pdfshrink {
+    IN=${1}
+    OUT=${1%.*}-resized.pdf
+    OPTS="-sDEVICE=pdfwrite -sPAPERSIZE=a4 -dFIXEDMEDIA -dPDFFitPage -dCompatibilityLevel=1.4"
+    gs -o "${OUT}" ${OPTS} "${IN}"
+}
+
+function mp3-dl {
+	youtube-dl -x --audio-format mp3 --audio-quality 0 "${1}"
+}
