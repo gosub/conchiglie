@@ -5,6 +5,7 @@
 	ui = auto
 [alias]
 	lol = log --decorate --pretty=oneline --abbrev-commit
+	auto = !git add --all && git commit -m \"AUTOCOMMIT $(date)\"
 [gui]
 	spellingdictionary = none
 [guitool "vim"]
