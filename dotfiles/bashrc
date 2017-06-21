@@ -1,0 +1,49 @@
+# .bashrc for gg
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# use colors for ls
+alias ls='ls --color=auto'
+
+# use colors for grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+
+# simple prompt
+PS1='[\u@\h \W]\$ '
+
+# change default autocompletion style
+bind 'set show-all-if-ambiguous on'
+bind 'set menu-complete-display-prefix on'
+bind 'TAB:menu-complete'
+
+# create local shell folter if it doesnt exist
+mkdir -p ~/.local/shell
+
+# put less history in a better place
+export LESSHISTFILE=~/.local/shell/.lesshst
+
+# put bash history in a better place
+HISTFILE=~/.local/shell/.bash_history
+
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=10000
+HISTFILESIZE=50000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# gg personal aliases and functions in 'utilitarie'
+if [ -f ~/Dropbox/prj/2016/conchiglie/utilitarie ]; then
+    . ~/Dropbox/prj/2016/conchiglie/utilitarie
+elif [ -f ~/personal/Dropbox/prj/2016/conchiglie/utilitarie ]; then
+    . ~/personal/Dropbox/prj/2016/conchiglie/utilitarie
+fi

@@ -1,0 +1,188 @@
+;; package system/marmelade init
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
+
+
+;; basic ui tweaks
+
+;; do not show splash screen
+(setq inhibit-startup-screen 1)
+
+;; remove toolbar
+(tool-bar-mode -1)
+
+;; scrollbar on the right
+(set-scroll-bar-mode 'right)
+
+;; visible bell
+(setq visible-bell t)
+
+;; show line number on the side
+(global-linum-mode 1)
+(setq linum-format "%3d")
+
+;; column number in info bar
+(column-number-mode 1)
+
+;; show matching parens
+(show-paren-mode 1)
+
+
+
+;; editing tweaks
+
+;; save bufer with F2, like in GWBASIC
+(global-set-key (kbd "<f2>") 'save-buffer)
+
+;; type y instead of yes
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; put autosave and backup files inside .emacs.d/ subdirs
+(setq auto-save-file-name-transforms
+      '((".*" "~/.emacs.d/autosaves/\\1" t)))
+(setq backup-directory-alist
+      '((".*". "~/.emacs.d/backups/")))
+
+;; set fill-column (alt-q) to 80 char per lines
+(setq-default fill-column 80)
+
+
+
+;; org-mode tweaks
+
+;; make sure org is installed
+(unless (package-installed-p 'org)
+  (package-refresh-contents)
+  (package-install 'org))
+  
+;; keybinding to most used file
+(setq gg-txt-dir
+      (if (file-directory-p "~/personal/Dropbox")
+	  "~/personal/Dropbox/txt/"
+	  "~/Dropbox/txt/"))
+
+(global-set-key (kbd "<f5>")
+		(lambda () 
+		  (interactive)
+		  (find-file (concat gg-txt-dir "todo.org"))
+		  (find-file (concat gg-txt-dir "done.org"))))
+
+;; insert current date in iso format - function
+(defun gg-insert-current-date-iso ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d" (current-time))))
+
+;; insert current date in iso format - binding
+(global-set-key "\C-cd" 'gg-insert-current-date-iso)
+
+;; search and duplicate whole line - function
+(defun gg-search-and-copy-line ()
+  (interactive)
+  (let ((p (point)))
+    (when (not (null (isearch-forward)))
+      (move-beginning-of-line nil)
+      (kill-line)
+      (yank)
+      (goto-char p)
+      (yank))))
+
+;; search and duplicate whole line - binding
+(global-set-key (kbd "C-c s") 'gg-search-and-copy-line)
+
+;; disable linum-mode in org-mode, too slow
+(defun gg-nolinum ()
+  (linum-mode 0))
+(add-hook 'org-mode-hook 'gg-nolinum)
+
+
+
+;; evil mode
+
+;; make sure evil is installed
+(unless (package-installed-p 'evil)
+  (package-refresh-contents)
+  (package-install 'evil))
+
+;; toggle vim in local buffer with F7
+(require 'evil)
+(global-set-key (kbd "<f7>") 'evil-local-mode)
+
+
+;; extras
+
+; additional superscript and subscript
+; unicode characters with C-x 8
+
+(defun more-ctl-x-8-superscript ()
+  "Add more unicode superscript characters to C-x 8."
+  (define-key 'iso-transl-ctl-x-8-map "^0" [#x2070])
+  ;; the next three keys are already defined in emacs
+  ;; (define-key 'iso-transl-ctl-x-8-map "^1" [#x00B9]) 
+  ;; (define-key 'iso-transl-ctl-x-8-map "^2" [#x00B2])
+  ;; (define-key 'iso-transl-ctl-x-8-map "^3" [#x00B3])
+  (define-key 'iso-transl-ctl-x-8-map "^4" [#x2074])
+  (define-key 'iso-transl-ctl-x-8-map "^5" [#x2075])
+  (define-key 'iso-transl-ctl-x-8-map "^6" [#x2076])
+  (define-key 'iso-transl-ctl-x-8-map "^7" [#x2077])
+  (define-key 'iso-transl-ctl-x-8-map "^8" [#x2078])
+  (define-key 'iso-transl-ctl-x-8-map "^9" [#x2079])
+
+  (define-key 'iso-transl-ctl-x-8-map "^+" [#x207A])
+  (define-key 'iso-transl-ctl-x-8-map "^-" [#x207B])
+  (define-key 'iso-transl-ctl-x-8-map "^=" [#x207C])
+  (define-key 'iso-transl-ctl-x-8-map "^(" [#x207D])
+  (define-key 'iso-transl-ctl-x-8-map "^)" [#x207E])
+  (define-key 'iso-transl-ctl-x-8-map "^n" [#x207F])
+  (define-key 'iso-transl-ctl-x-8-map "^i" [#x2071]))
+
+(defun more-ctl-x-8-subscript ()
+  "Add more unicode subscript characters to C-x 8."
+  (define-key 'iso-transl-ctl-x-8-map "_0" [#x2080])
+  (define-key 'iso-transl-ctl-x-8-map "_1" [#x2081]) 
+  (define-key 'iso-transl-ctl-x-8-map "_2" [#x2082])
+  (define-key 'iso-transl-ctl-x-8-map "_3" [#x2083])
+  (define-key 'iso-transl-ctl-x-8-map "_4" [#x2084])
+  (define-key 'iso-transl-ctl-x-8-map "_5" [#x2085])
+  (define-key 'iso-transl-ctl-x-8-map "_6" [#x2086])
+  (define-key 'iso-transl-ctl-x-8-map "_7" [#x2087])
+  (define-key 'iso-transl-ctl-x-8-map "_8" [#x2088])
+  (define-key 'iso-transl-ctl-x-8-map "_9" [#x2089])
+
+  (define-key 'iso-transl-ctl-x-8-map "_+" [#x208A])
+  (define-key 'iso-transl-ctl-x-8-map "_-" [#x208B])
+  (define-key 'iso-transl-ctl-x-8-map "_=" [#x208C])
+  (define-key 'iso-transl-ctl-x-8-map "_(" [#x208D])
+  (define-key 'iso-transl-ctl-x-8-map "_)" [#x208E])
+  (define-key 'iso-transl-ctl-x-8-map "_n" [#x2099]))
+
+(more-ctl-x-8-superscript)
+(more-ctl-x-8-subscript)
+
+;; partially simulates C-a (increment number at point) from VIM
+
+(defun increment-number-at-point ()
+  (interactive)
+  (save-excursion
+    (skip-chars-backward "0123456789")
+    (or (looking-at "[0123456789]+")
+	(error "No number at point"))
+    (replace-match (number-to-string 
+                      (1+ (string-to-number (match-string 0)))))))
+
+(global-set-key (kbd "C-c +") 'increment-number-at-point)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (evil))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
