@@ -35,6 +35,9 @@ bindsym $mod+t exec i3-sensible-terminal
 # start browser (gg)
 bindsym $mod+c exec chromium --incognito
 
+# start emacs (gg)
+bindsym $mod+e exec emacs
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -81,7 +84,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+u layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
