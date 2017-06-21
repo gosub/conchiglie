@@ -1,5 +1,8 @@
 URxvt.font: xft:DejavuSansMono:size=9
 URxvt.letterSpace: -1
+
+URxvt.scrollBar_right: true
+
 #URxvt.foreground: #f2f2f2
 #URxvt.background: #101010
 URxvt.color0: #101010
