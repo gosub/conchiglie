@@ -1,3 +1,7 @@
+# nice aliases
+
+alias lsl='ls -lha'
+alias functions='declare -f'
 
 function every () {
     DELAY=${1}
@@ -17,8 +21,6 @@ alias everyhour='every 1h'
 alias yargs='xargs -n 1 -d \\n -I {}'
 
 alias incognito='chromium --incognito'
-
-alias functions='declare -f'
 
 function xsync () {
     DIR1=${1}
