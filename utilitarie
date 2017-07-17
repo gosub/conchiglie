@@ -81,5 +81,5 @@ function mp3-dl {
 }
 
 function lsfun {
-	 declare -F | awk '{ print $3 }'
+	declare -F | awk '{ print $3 }'
 }
