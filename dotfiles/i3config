@@ -38,8 +38,11 @@ bindsym $mod+c exec chromium --incognito
 # start emacs (gg)
 bindsym $mod+e exec emacs
 
-# kill focused window
-bindsym $mod+Shift+q kill
+# kill focused window (gg)
+bindsym $mod+q kill
+
+# poweroff (gg)
+bindsym $mod+Shift+q exec poweroff
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
