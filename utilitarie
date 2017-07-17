@@ -3,6 +3,7 @@
 alias lsl='ls -lha'
 alias functions='declare -f'
 
+
 function every () {
     DELAY=${1}
     shift
@@ -77,4 +78,8 @@ function pdfshrink {
 
 function mp3-dl {
 	youtube-dl -x --audio-format mp3 --audio-quality 0 "${1}"
+}
+
+function lsfun {
+	 declare -F | awk '{ print $3 }'
 }
