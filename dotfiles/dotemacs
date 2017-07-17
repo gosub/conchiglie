@@ -42,6 +42,8 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; put autosave and backup files inside .emacs.d/ subdirs
+(make-directory "~/.emacs.d/autosaves" :parents)
+(make-directory "~/.emacs.d/backups" :parents)
 (setq auto-save-file-name-transforms
       '((".*" "~/.emacs.d/autosaves/\\1" t)))
 (setq backup-directory-alist
@@ -174,6 +176,9 @@
                       (1+ (string-to-number (match-string 0)))))))
 
 (global-set-key (kbd "C-c +") 'increment-number-at-point)
+
+;; added by emacs
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
