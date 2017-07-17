@@ -1,16 +1,12 @@
 set nocompatible
 
-filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
-
 set modelines=0
 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+let g:python_recommended_style = 0
 
 set encoding=utf-8
 set scrolloff=3
