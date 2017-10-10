@@ -98,3 +98,7 @@ function dirtygit {
 		popd > /dev/null
 	done
 }
+
+function audiocd {
+    mplayer cdda://${1}:1 -cache 1024
+}
