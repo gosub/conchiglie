@@ -80,6 +80,11 @@ function mp3-dl {
 	youtube-dl -x --audio-format mp3 --audio-quality 0 "${1}"
 }
 
+function ilaria-tag {
+	id3v2 --delete-all "$@"
+	id3v2 --album "Ilaria" "$@"
+}
+
 function lsfun {
 	declare -F | awk '{ print $3 }'
 }
