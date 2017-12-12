@@ -31,6 +31,10 @@
 ;; show matching parens
 (show-paren-mode 1)
 
+;; middle mouse click yank at text cursor
+;; not al mouse cursor position
+(setq mouse-yank-at-point t)
+
 
 
 ;; editing tweaks
