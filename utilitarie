@@ -102,3 +102,8 @@ function dirtygit {
 function audiocd {
     mplayer cdda://${1}:1 -cache 1024
 }
+
+function xoff {
+    sleep 0.2
+    xset -display :0.0 dpms force off
+}
