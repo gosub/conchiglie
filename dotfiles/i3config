@@ -21,7 +21,7 @@ bindsym $mod+q kill
 bindsym $mod+Shift+q exec poweroff
 # layout toggle (gg)
 # replaces $mod+s $mod+w #mod+e
-bindsym $mod+x layout toggle all
+bindsym $mod+x layout toggle
 # volume keys (gg)
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute && pkill -USR1 i3status
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute && pkill -USR1 i3status
