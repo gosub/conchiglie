@@ -37,7 +37,7 @@ set formatoptions=qrn1
 nnoremap j gj
 nnoremap k gk
 
-set relativenumber
+set number
 
 set nobackup
 set noswapfile
