@@ -51,3 +51,4 @@ syntax on
 " gg configurations
 :map <F2> :nohl<CR>
 :map <F3> :set wrap! <CR>
+hi CursorLine cterm=none
