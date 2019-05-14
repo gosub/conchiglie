@@ -7,6 +7,7 @@
 	lol = log --decorate --pretty=oneline --abbrev-commit
 	auto = !git add --all && git commit -m \"AUTOCOMMIT $(date)\"
     graph = log --graph --pretty=oneline --abbrev-commit --all
+    todo = grep TODO
 [gui]
 	spellingdictionary = none
 [guitool "vim"]
