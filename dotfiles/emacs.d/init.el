@@ -10,36 +10,8 @@
 (add-to-list 'load-path
 	     (expand-file-name "cfg" user-emacs-directory))
 
-;; basic ui tweaks
-
-;; do not show splash screen
-(setq inhibit-startup-screen 1)
-
-;; remove toolbar
-(tool-bar-mode -1)
-
-;; scrollbar on the right
-(set-scroll-bar-mode 'right)
-
-;; visible bell
-(setq visible-bell t)
-
-;; show line number on the side
-(global-linum-mode 1)
-(setq linum-format "%3d")
-
-;; column number in info bar
-(column-number-mode 1)
-
-;; show matching parens
-(show-paren-mode 1)
-
-;; middle mouse click yank at text cursor
-;; not al mouse cursor position
-(setq mouse-yank-at-point t)
-
-
 (require 'gg-dirs-and-files)
+(require 'gg-visuals)
 (require 'gg-unicode)
 
 ;; editing tweaks
