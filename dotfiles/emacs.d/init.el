@@ -1,4 +1,4 @@
-;; package system/marmelade init
+;; package stuff
 
 (require 'package)
 (add-to-list 'package-archives
