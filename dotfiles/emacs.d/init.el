@@ -39,6 +39,7 @@
 (setq mouse-yank-at-point t)
 
 
+(require 'gg-dirs-and-files)
 (require 'gg-unicode)
 
 ;; editing tweaks
@@ -48,14 +49,6 @@
 
 ;; type y instead of yes
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-;; put autosave and backup files inside .emacs.d/ subdirs
-(make-directory "~/.emacs.d/autosaves" :parents)
-(make-directory "~/.emacs.d/backups" :parents)
-(setq auto-save-file-name-transforms
-      '((".*" "~/.emacs.d/autosaves/\\1" t)))
-(setq backup-directory-alist
-      '((".*". "~/.emacs.d/backups/")))
 
 ;; set fill-column (alt-q) to 80 char per lines
 (setq-default fill-column 80)
@@ -70,16 +63,12 @@
   (package-install 'org))
   
 ;; keybinding to most used file
-(setq gg-txt-dir
-      (if (file-directory-p "~/personal/Dropbox")
-	  "~/personal/Dropbox/txt/"
-	  "~/Dropbox/txt/"))
 
 (global-set-key (kbd "<f5>")
 		(lambda () 
 		  (interactive)
-		  (find-file (concat gg-txt-dir "todo.org"))
-		  (find-file (concat gg-txt-dir "done.org"))))
+		  (find-file (concat gg-txt-directory "todo.org"))
+		  (find-file (concat gg-txt-directory "done.org"))))
 
 ;; insert current date in iso format - function
 (defun gg-insert-current-date-iso ()
