@@ -15,17 +15,6 @@
 (require 'gg-ux)
 (require 'gg-visuals)
 (require 'gg-unicode)
-;; evil mode
-
-;; make sure evil is installed
-(unless (package-installed-p 'evil)
-  (package-refresh-contents)
-  (package-install 'evil))
-
-;; toggle vim in local buffer with F7
-(require 'evil)
-
-
-
+(require 'gg-evil)
 (require 'gg-org)
 (require 'gg-keybindings)
