@@ -22,13 +22,6 @@
 (global-set-key (kbd "<f2>") 'save-buffer)
 
 
-;; org-mode tweaks
-
-;; make sure org is installed
-(unless (package-installed-p 'org)
-  (package-refresh-contents)
-  (package-install 'org))
-  
 ;; keybinding to most used file
 
 
@@ -39,12 +32,6 @@
 
 ;; search and duplicate whole line - binding
 (global-set-key (kbd "C-c s") 'gg-search-and-copy-line)
-
-;; disable linum-mode in org-mode, too slow
-(defun gg-nolinum ()
-  (linum-mode 0))
-(add-hook 'org-mode-hook 'gg-nolinum)
-
 
 
 ;; evil mode
@@ -61,3 +48,4 @@
 
 
 (global-set-key (kbd "C-c +") 'increment-number-at-point)
+(require 'gg-org)
