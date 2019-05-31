@@ -8,6 +8,9 @@
 ;; remove toolbar
 (tool-bar-mode -1)
 
+;; remove menu bar
+(menu-bar-mode -1)
+
 ;; scrollbar on the right
 (set-scroll-bar-mode 'right)
 
@@ -15,18 +18,11 @@
 (setq visible-bell t)
 
 ;; show line number on the side
-(global-linum-mode 1)
+(global-display-line-numbers-mode)
 (setq linum-format "%3d")
 
 ;; column number in info bar
 (column-number-mode 1)
-
-;; show matching parens
-(show-paren-mode 1)
-
-;; middle mouse click yank at text cursor
-;; not al mouse cursor position
-(setq mouse-yank-at-point t)
 
 
 (provide 'gg-visuals)
