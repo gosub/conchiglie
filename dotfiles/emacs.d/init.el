@@ -12,6 +12,7 @@
 
 (require 'gg-dirs-and-files)
 (require 'gg-functions)
+(require 'gg-ux)
 (require 'gg-visuals)
 (require 'gg-unicode)
 
@@ -19,13 +20,6 @@
 
 ;; save bufer with F2, like in GWBASIC
 (global-set-key (kbd "<f2>") 'save-buffer)
-
-;; type y instead of yes
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; set fill-column (alt-q) to 80 char per lines
-(setq-default fill-column 80)
-
 
 
 ;; org-mode tweaks
