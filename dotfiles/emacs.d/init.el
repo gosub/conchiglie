@@ -15,25 +15,6 @@
 (require 'gg-ux)
 (require 'gg-visuals)
 (require 'gg-unicode)
-
-;; editing tweaks
-
-;; save bufer with F2, like in GWBASIC
-(global-set-key (kbd "<f2>") 'save-buffer)
-
-
-;; keybinding to most used file
-
-
-
-;; insert current date in iso format - binding
-(global-set-key "\C-cd" 'gg-insert-current-date-iso)
-
-
-;; search and duplicate whole line - binding
-(global-set-key (kbd "C-c s") 'gg-search-and-copy-line)
-
-
 ;; evil mode
 
 ;; make sure evil is installed
@@ -43,9 +24,8 @@
 
 ;; toggle vim in local buffer with F7
 (require 'evil)
-(global-set-key (kbd "<f7>") 'evil-local-mode)
 
 
 
-(global-set-key (kbd "C-c +") 'increment-number-at-point)
 (require 'gg-org)
+(require 'gg-keybindings)
