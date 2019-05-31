@@ -11,6 +11,7 @@
 	     (expand-file-name "cfg" user-emacs-directory))
 
 (require 'gg-dirs-and-files)
+(require 'gg-functions)
 (require 'gg-visuals)
 (require 'gg-unicode)
 
@@ -36,30 +37,11 @@
   
 ;; keybinding to most used file
 
-(global-set-key (kbd "<f5>")
-		(lambda () 
-		  (interactive)
-		  (find-file (concat gg-txt-directory "todo.org"))
-		  (find-file (concat gg-txt-directory "done.org"))))
 
-;; insert current date in iso format - function
-(defun gg-insert-current-date-iso ()
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d" (current-time))))
 
 ;; insert current date in iso format - binding
 (global-set-key "\C-cd" 'gg-insert-current-date-iso)
 
-;; search and duplicate whole line - function
-(defun gg-search-and-copy-line ()
-  (interactive)
-  (let ((p (point)))
-    (when (not (null (isearch-forward)))
-      (move-beginning-of-line nil)
-      (kill-line)
-      (yank)
-      (goto-char p)
-      (yank))))
 
 ;; search and duplicate whole line - binding
 (global-set-key (kbd "C-c s") 'gg-search-and-copy-line)
@@ -83,15 +65,5 @@
 (global-set-key (kbd "<f7>") 'evil-local-mode)
 
 
-;; partially simulates C-a (increment number at point) from VIM
-
-(defun increment-number-at-point ()
-  (interactive)
-  (save-excursion
-    (skip-chars-backward "0123456789")
-    (or (looking-at "[0123456789]+")
-	(error "No number at point"))
-    (replace-match (number-to-string 
-                      (1+ (string-to-number (match-string 0)))))))
 
 (global-set-key (kbd "C-c +") 'increment-number-at-point)
