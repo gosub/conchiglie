@@ -116,3 +116,7 @@ function xswitch {
         xrandr --output LVDS1 --off --output VGA1 --auto
     fi
 }
+
+function stream {
+    ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
+}
