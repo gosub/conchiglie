@@ -11,5 +11,8 @@
 ;; not al mouse cursor position
 (setq mouse-yank-at-point t)
 
+;; re-enable 'a' in dired
+(put 'dired-find-alternate-file 'disabled nil)
+
 
 (provide 'gg-ux)
