@@ -12,7 +12,7 @@
 
 ;; search and duplicate whole line
 (global-set-key (kbd "C-c s")
-		'gg/search-and-copy-line)
+		'gg/search-forward-and-copy-line)
 
 ;; toggle vim in local buffer
 (global-set-key (kbd "<f7>")

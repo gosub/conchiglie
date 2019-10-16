@@ -7,8 +7,8 @@
     (insert
      (format-time-string "%Y-%m-%d" (current-time)))))
 
-;; search and duplicate whole line - function
-(defun gg/search-and-copy-line ()
+;; search forward and duplicate whole line
+(defun gg/search-forward-and-copy-line ()
   (interactive)
   (let ((p (point)))
     (when (not (null (isearch-forward)))
