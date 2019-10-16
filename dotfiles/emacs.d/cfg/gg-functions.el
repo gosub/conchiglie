@@ -18,6 +18,18 @@
       (goto-char p)
       (yank))))
 
+;; search backward and duplicate whole line
+(defun gg/search-backward-and-copy-line ()
+  (interactive)
+  (let ((p (point)))
+    (when (not (null (isearch-backward)))
+      (move-beginning-of-line nil)
+      (kill-line)
+      (yank)
+      (goto-char p)
+      (yank))))
+
+
 ;; partially simulates C-a (increment number at point) from VIM
 (defun gg/increment-number-at-point ()
   (interactive)
