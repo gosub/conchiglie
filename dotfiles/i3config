@@ -22,6 +22,9 @@ bindsym $mod+Shift+q exec poweroff
 # layout toggle (gg)
 # replaces $mod+s $mod+w #mod+e
 bindsym $mod+x layout toggle
+# enable/disable mouse (gg)
+bindsym $mod+m exec --no-startup-id xinput disable "AlpsPS/2 ALPS DualPoint TouchPad"
+bindsym $mod+Shift+m exec --no-startup-id xinput enable "AlpsPS/2 ALPS DualPoint TouchPad"
 # volume keys (gg)
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute && pkill -USR1 i3status
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute && pkill -USR1 i3status
