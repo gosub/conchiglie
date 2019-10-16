@@ -18,6 +18,10 @@
 (global-set-key (kbd "<f7>")
 		'evil-local-mode)
 
+;; magit-status enabled globally
+(global-set-key (kbd "C-x g")
+		'magit-status)
+
 ;; missing ctrl-A from vim
 (global-set-key (kbd "C-c +")
 		'gg/increment-number-at-point)
