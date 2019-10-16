@@ -3,8 +3,6 @@ URxvt.letterSpace: -1
 
 URxvt.scrollBar_right: true
 
-#URxvt.foreground: #f2f2f2
-#URxvt.background: #101010
 URxvt.color0: #101010
 URxvt.color1: #f13a21
 URxvt.color2: #93f91d
