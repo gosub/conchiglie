@@ -14,5 +14,12 @@
 ;; re-enable 'a' in dired
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; launch http url in chromium incognito
+(setq browse-url-browser-function
+      (quote browse-url-generic))
+(setq browse-url-generic-args
+      (quote ("--incognito")))
+(setq browse-url-generic-program
+      "chromium")
 
 (provide 'gg-ux)
