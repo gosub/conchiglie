@@ -30,4 +30,8 @@
 (global-set-key (kbd "C-x k")
 		'kill-this-buffer)
 
+;; toggle line truncation on/off
+(global-set-key (kbd "C-c $")
+		'toggle-truncate-lines)
+
 (provide 'gg-keybindings)
