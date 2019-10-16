@@ -19,3 +19,4 @@
 (require 'gg-org)
 (require 'gg-erlang)
 (require 'gg-keybindings)
+(require 'gg-tidal)

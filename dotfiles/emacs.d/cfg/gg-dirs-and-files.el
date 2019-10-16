@@ -37,5 +37,8 @@
 (setq gg-done-file
       (expand-file-name "done.org" gg-txt-directory))
 
+; tidalcycles samples folder
+(setq gg-tidal-sample-folder
+      (expand-file-name "~/.local/share/SuperCollider/downloaded-quarks/Dirt-Samples"))
 
 (provide 'gg-dirs-and-files)
