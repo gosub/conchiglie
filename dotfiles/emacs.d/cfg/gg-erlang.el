@@ -1,5 +1,5 @@
 (add-to-list 'load-path
-	     "/usr/lib/erlang/lib/tools-3.2/emacs")
+	     "/usr/lib/erlang/lib/tools-3.2.1/emacs")
 
 (setq erlang-root-dir
       "/usr/lib/erlang")
