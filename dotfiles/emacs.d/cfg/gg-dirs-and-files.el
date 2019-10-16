@@ -27,6 +27,9 @@
       (if (file-directory-p "~/personal/Dropbox")
 	  "~/personal/Dropbox/txt/"
 	  "~/Dropbox/txt/"))
+; notes file
+(setq gg-notes-file
+      (expand-file-name "notes.org" gg-txt-directory))
 ; todo file
 (setq gg-todo-file
       (expand-file-name "todo.org" gg-txt-directory))

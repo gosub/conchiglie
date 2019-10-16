@@ -27,6 +27,7 @@
 ;; prepare my homepage
 (defun gg/apparecchia ()
   (interactive)
+  (find-file gg-notes-file)
   (find-file gg-todo-file)
   (find-file gg-done-file))
 
