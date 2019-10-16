@@ -26,5 +26,8 @@
 (global-set-key (kbd "C-c +")
 		'gg/increment-number-at-point)
 
+;; kill buffer without confirmation
+(global-set-key (kbd "C-x k")
+		'kill-this-buffer)
 
 (provide 'gg-keybindings)
