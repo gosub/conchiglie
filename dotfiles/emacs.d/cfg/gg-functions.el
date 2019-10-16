@@ -1,7 +1,11 @@
 ;; insert current date in iso format - function
-(defun gg/insert-current-date ()
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d" (current-time))))
+(defun gg/insert-current-date (arg)
+  (interactive "P")
+  (if (equal arg '(4)) ;; universal argument
+      (insert
+       (format-time-string "%d/%m/%Y" (current-time)))
+    (insert
+     (format-time-string "%Y-%m-%d" (current-time)))))
 
 ;; search and duplicate whole line - function
 (defun gg/search-and-copy-line ()
