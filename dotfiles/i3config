@@ -34,6 +34,8 @@ for_window [class="qjackctl"] floating enable
 for_window [class="Slgui"] floating enable
 # start desktopo notification daemon
 exec --no-startup-id dunst
+# notify new files and directory created in root
+exec --no-startup-id inotifywait -m -e create --format 'new in ~: %f' ~ | while read CREATE; do notify-send "$CREATE"; done
 
 # default configuration
 
