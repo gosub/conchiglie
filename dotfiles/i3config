@@ -32,8 +32,6 @@ bindsym XF86AudioMute exec amixer -q set Master toggle && pkill -USR1 i3status
 # floating by default
 for_window [class="qjackctl"] floating enable
 for_window [class="Slgui"] floating enable
-# set keyboard options
-exec --no-startup-id setxkbmap -layout us -variant altgr-intl
 
 # default configuration
 
