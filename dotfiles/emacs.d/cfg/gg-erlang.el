@@ -1,5 +1,7 @@
-(add-to-list 'load-path
-	     "/usr/lib/erlang/lib/tools-3.2.1/emacs")
+(let* ((lib-dir "/usr/lib/erlang/lib/")
+       (tools-dir (file-name-completion "tools" lib-dir))
+       (erlang-mode-dir (concat lib-dir tools-dir "emacs")))
+  (add-to-list 'load-path erlang-mode-dir))
 
 (setq erlang-root-dir
       "/usr/lib/erlang")
