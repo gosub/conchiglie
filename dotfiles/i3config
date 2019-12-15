@@ -30,7 +30,7 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute && pkill -USR
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute && pkill -USR1 i3status
 bindsym XF86AudioMute exec amixer -q set Master toggle && pkill -USR1 i3status
 # floating by default
-for_window [class="qjackctl"] floating enable
+for_window [class="QjackCtl"] floating enable
 for_window [class="Slgui"] floating enable
 # start desktopo notification daemon
 exec --no-startup-id dunst
