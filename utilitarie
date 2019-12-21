@@ -30,9 +30,6 @@ function xsync () {
     rsync --progress --recursive --ignore-existing --size-only --whole-file ${DIR2} ${DIR1}
 }
 
-alias zenfone='sudo jmtpfs /mnt/zenfone5 -o allow_other'
-alias zensync='xsync /mnt/zenfone5/Scheda\ SD/Music/ /home/gg/personal/music/portable'
-
 function imgurandom()
 {
     cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 5 | head -n 1 | awk '{ print "http://i.imgur.com/" $1 ".jpg" }' | xargs display
