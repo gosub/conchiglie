@@ -86,16 +86,23 @@ function lsfun {
 	declare -F | awk '{ print $3 }'
 }
 
-function dirtygit {
+function on-all-git-subdirs {
 	find . -type d -name '.git' | while read dir ; do
 		pushd $dir/../ > /dev/null
-		if [[ -n `git status -s` ]]; then
-			echo "Dirty git dir: ${dir//\.git/}"
-		fi
+        $@
 		popd > /dev/null
 	done
 }
 
+function is-git-dirty {
+    if [[ -n `git status -s` ]]; then
+        echo "$PWD has uncommitted changes"
+    else
+        echo "$PWD is clean"
+    fi
+}
+
+alias dirty='on-all-git-subdirs is-git-dirty'
 function audiocd {
     mplayer cdda://${1}:1 -cache 1024
 }
