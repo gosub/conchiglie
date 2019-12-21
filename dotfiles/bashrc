@@ -44,6 +44,4 @@ shopt -s checkwinsize
 # gg personal aliases and functions in 'utilitarie'
 if [ -f ~/Dropbox/prj/2016/conchiglie/utilitarie ]; then
     . ~/Dropbox/prj/2016/conchiglie/utilitarie
-elif [ -f ~/personal/Dropbox/prj/2016/conchiglie/utilitarie ]; then
-    . ~/personal/Dropbox/prj/2016/conchiglie/utilitarie
 fi
