@@ -103,6 +103,8 @@ function is-git-dirty {
 }
 
 alias dirty='on-all-git-subdirs is-git-dirty'
+alias pullall='on-all-git-subdirs git pull'
+
 function audiocd {
     mplayer cdda://${1}:1 -cache 1024
 }
