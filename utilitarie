@@ -90,20 +90,6 @@ function audiocd {
     mplayer cdda://${1}:1 -cache 1024
 }
 
-function xoff {
-    sleep 0.2
-    xset -display :0.0 dpms force off
-}
-
-function xswitch {
-    xrandr --listactivemonitors | grep LVDS1 > /dev/null
-    rc=$?; if [[ $rc != 0 ]]; then
-        xrandr --output LVDS1 --auto --output VGA1 --off
-    else
-        xrandr --output LVDS1 --off --output VGA1 --auto
-    fi
-}
-
 function stream {
     ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
 }
@@ -145,3 +131,20 @@ function is-git-dirty {
 
 alias dirty='on-all-git-subdirs is-git-dirty'
 alias pullall='on-all-git-subdirs git pull'
+
+
+##### XORG #####
+
+function xoff {
+    sleep 0.2
+    xset -display :0.0 dpms force off
+}
+
+function xswitch {
+    xrandr --listactivemonitors | grep LVDS1 > /dev/null
+    rc=$?; if [[ $rc != 0 ]]; then
+        xrandr --output LVDS1 --auto --output VGA1 --off
+    else
+        xrandr --output LVDS1 --off --output VGA1 --auto
+    fi
+}
