@@ -133,3 +133,12 @@ function clip2org {
      echo -n [[$URL][$TITLE]] | xclip -selection "clipboard"
      echo [[$URL][$TITLE]]
 }
+
+function liquid {
+    FILENAME=${1}
+    NEWFILENAME=${FILENAME%.*}-liquid.${FILENAME#*.}
+    SCALE=${2:-75}
+    REVSCALE=$((10000/${SCALE}))
+    PARAMS="-liquid-rescale ${SCALE}% -resize ${REVSCALE}%"
+    convert "${FILENAME}" ${PARAMS} "${NEWFILENAME}"
+}
