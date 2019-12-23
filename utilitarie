@@ -70,13 +70,6 @@ function stream {
     ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
 }
 
-function clip2org {
-     URL=$(xclip -o)
-     TITLE=`curl -s "$URL" | grep -iPo '(?<=<title>)(.*)(?=</title>)'`
-     echo -n [[$URL][$TITLE]] | xclip -selection "clipboard"
-     echo [[$URL][$TITLE]]
-}
-
 function liquid {
     FILENAME=${1}
     NEWFILENAME=${FILENAME%.*}-liquid.${FILENAME#*.}
@@ -160,4 +153,14 @@ function pdfshrink {
 
 function unp7m {
     openssl smime -decrypt -in "${1}" -inform DER -verify -noverify -out "${1%.*}"
+}
+
+
+##### EMACS #####
+
+function clip2org {
+     URL=$(xclip -o)
+     TITLE=`curl -s "$URL" | grep -iPo '(?<=<title>)(.*)(?=</title>)'`
+     echo -n [[$URL][$TITLE]] | xclip -selection "clipboard"
+     echo [[$URL][$TITLE]]
 }
