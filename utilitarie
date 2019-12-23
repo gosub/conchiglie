@@ -49,17 +49,6 @@ function ricorrenze () {
     tmux attach -t ricorrenze
 }
 
-function unp7m {
-    openssl smime -decrypt -in "${1}" -inform DER -verify -noverify -out "${1%.*}"
-}
-
-function pdfshrink {
-    IN=${1}
-    OUT=${1%.*}-resized.pdf
-    OPTS="-sDEVICE=pdfwrite -sPAPERSIZE=a4 -dFIXEDMEDIA -dPDFFitPage -dCompatibilityLevel=1.4"
-    gs -o "${OUT}" ${OPTS} "${IN}"
-}
-
 function mp3-dl {
 	youtube-dl -x --audio-format mp3 --audio-quality 0 "${1}"
 }
@@ -157,4 +146,18 @@ function activate() {
         fi
         cd ..
     done
+}
+
+
+##### PDF #####
+
+function pdfshrink {
+    IN=${1}
+    OUT=${1%.*}-resized.pdf
+    OPTS="-sDEVICE=pdfwrite -sPAPERSIZE=a4 -dFIXEDMEDIA -dPDFFitPage -dCompatibilityLevel=1.4"
+    gs -o "${OUT}" ${OPTS} "${IN}"
+}
+
+function unp7m {
+    openssl smime -decrypt -in "${1}" -inform DER -verify -noverify -out "${1%.*}"
 }
