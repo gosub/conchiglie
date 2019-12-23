@@ -145,3 +145,16 @@ alias yargs='xargs -n 1 -d \\n -I {}'
 alias incognito='chromium --incognito'
 alias everyday='every 1d'
 alias everyhour='every 1h'
+
+
+##### PYTHON #####
+
+function activate() {
+    while [ $PWD != "/" ]; do
+        if [ -d ".venv" ]; then
+            source .venv/bin/activate
+            break
+        fi
+        cd ..
+    done
+}
