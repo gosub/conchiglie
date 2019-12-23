@@ -27,10 +27,6 @@ function webm()
 	ffmpeg -i $1 -c:v libvpx -b:v 1M -c:a libvorbis $1.webm
 }
 
-function wav2mp3 () {
-    lame --resample 44.1 -q 0 --vbr-new -V 0 "$1" -o "${1%.*}.mp3";
-}
-
 function ricorrenze () {
     tmux new -d -s ricorrenze
 
@@ -49,21 +45,8 @@ function ricorrenze () {
     tmux attach -t ricorrenze
 }
 
-function mp3-dl {
-	youtube-dl -x --audio-format mp3 --audio-quality 0 "${1}"
-}
-
-function ilaria-tag {
-	id3v2 --delete-all "$@"
-	id3v2 --album "Ilaria" "$@"
-}
-
 function lsfun {
 	declare -F | awk '{ print $3 }'
-}
-
-function audiocd {
-    mplayer cdda://${1}:1 -cache 1024
 }
 
 function stream {
@@ -163,4 +146,24 @@ function clip2org {
      TITLE=`curl -s "$URL" | grep -iPo '(?<=<title>)(.*)(?=</title>)'`
      echo -n [[$URL][$TITLE]] | xclip -selection "clipboard"
      echo [[$URL][$TITLE]]
+}
+
+
+##### AUDIO #####
+
+function wav2mp3 () {
+    lame --resample 44.1 -q 0 --vbr-new -V 0 "$1" -o "${1%.*}.mp3";
+}
+
+function mp3-dl {
+    youtube-dl -x --audio-format mp3 --audio-quality 0 "${1}"
+}
+
+function ilaria-tag {
+    id3v2 --delete-all "$@"
+    id3v2 --album "Ilaria" "$@"
+}
+
+function audiocd {
+    mplayer cdda://${1}:1 -cache 1024
 }
