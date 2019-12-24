@@ -11,10 +11,11 @@ function every () {
 }
 
 function xsync () {
-    DIR1=${1}
-    DIR2=${2}
-    rsync --progress --recursive --ignore-existing --size-only --whole-file ${DIR1} ${DIR2}
-    rsync --progress --recursive --ignore-existing --size-only --whole-file ${DIR2} ${DIR1}
+    DIR1=${1}/
+    DIR2=${2}/
+    OPTS="--progress --recursive --ignore-existing --size-only --whole-file"
+    rsync ${OPTS} ${DIR1} ${DIR2}
+    rsync ${OPTS} ${DIR2} ${DIR1}
 }
 
 function lsfun {
