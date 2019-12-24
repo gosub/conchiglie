@@ -17,11 +17,6 @@ function xsync () {
     rsync --progress --recursive --ignore-existing --size-only --whole-file ${DIR2} ${DIR1}
 }
 
-function imgurandom()
-{
-    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 5 | head -n 1 | awk '{ print "http://i.imgur.com/" $1 ".jpg" }' | xargs display
-}
-
 function webm()
 {
 	ffmpeg -i $1 -c:v libvpx -b:v 1M -c:a libvorbis $1.webm
@@ -51,15 +46,6 @@ function lsfun {
 
 function stream {
     ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
-}
-
-function liquid {
-    FILENAME=${1}
-    NEWFILENAME=${FILENAME%.*}-liquid.${FILENAME#*.}
-    SCALE=${2:-75}
-    REVSCALE=$((10000/${SCALE}))
-    PARAMS="-liquid-rescale ${SCALE}% -resize ${REVSCALE}%"
-    convert "${FILENAME}" ${PARAMS} "${NEWFILENAME}"
 }
 
 
@@ -166,4 +152,22 @@ function ilaria-tag {
 
 function audiocd {
     mplayer cdda://${1}:1 -cache 1024
+}
+
+
+##### IMAGE #####
+
+function imgurandom()
+{
+    RNDHASH=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 5 | head -n 1`
+    feh --reload=0 "http://i.imgur.com/"${RNDHASH}".jpg"
+}
+
+function liquid {
+    FILENAME=${1}
+    NEWFILENAME=${FILENAME%.*}-liquid.${FILENAME#*.}
+    SCALE=${2:-75}
+    REVSCALE=$((10000/${SCALE}))
+    PARAMS="-liquid-rescale ${SCALE}% -resize ${REVSCALE}%"
+    convert "${FILENAME}" ${PARAMS} "${NEWFILENAME}"
 }
