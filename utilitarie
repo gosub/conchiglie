@@ -17,24 +17,6 @@ function xsync () {
     rsync --progress --recursive --ignore-existing --size-only --whole-file ${DIR2} ${DIR1}
 }
 
-function ricorrenze () {
-    tmux new -d -s ricorrenze
-
-    tmux split-window -h -t ricorrenze -c "${HOME}/y/articles"
-    tmux send "everyday ${HOME}/x/prj/2015/hoard/feed/feedhoarder.py" Enter
-
-    tmux split-window -v -t ricorrenze -c "${HOME}/y/pics/tumblr" 
-    tmux send "everyday python ~/x/prj/2015/hoard/tumblr/dump.py" Enter
-
-    tmux select-pane -t ricorrenze.top-left
-    tmux split-window -v -t ricorrenze -c "${HOME}/y/dumps/mu" 
-    tmux send "everyhour ~/x/prj/2015/hoard/4chan/mu.py" Enter
-
-    tmux select-pane -t ricorrenze.top-left
-
-    tmux attach -t ricorrenze
-}
-
 function lsfun {
 	declare -F | awk '{ print $3 }'
 }
