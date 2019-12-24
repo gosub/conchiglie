@@ -17,11 +17,6 @@ function xsync () {
     rsync --progress --recursive --ignore-existing --size-only --whole-file ${DIR2} ${DIR1}
 }
 
-function webm()
-{
-	ffmpeg -i $1 -c:v libvpx -b:v 1M -c:a libvorbis $1.webm
-}
-
 function ricorrenze () {
     tmux new -d -s ricorrenze
 
@@ -42,10 +37,6 @@ function ricorrenze () {
 
 function lsfun {
 	declare -F | awk '{ print $3 }'
-}
-
-function stream {
-    ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
 }
 
 
@@ -170,4 +161,16 @@ function liquid {
     REVSCALE=$((10000/${SCALE}))
     PARAMS="-liquid-rescale ${SCALE}% -resize ${REVSCALE}%"
     convert "${FILENAME}" ${PARAMS} "${NEWFILENAME}"
+}
+
+
+##### VIDEO #####
+
+function webm()
+{
+	ffmpeg -i $1 -c:v libvpx -b:v 1M -c:a libvorbis $1.webm
+}
+
+function stream {
+    ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
 }
