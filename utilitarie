@@ -10,14 +10,6 @@ function every () {
     done
 }
 
-function xsync () {
-    DIR1=${1}/
-    DIR2=${2}/
-    OPTS="--progress --recursive --ignore-existing --size-only --whole-file"
-    rsync ${OPTS} ${DIR1} ${DIR2}
-    rsync ${OPTS} ${DIR2} ${DIR1}
-}
-
 function lsfun {
 	declare -F | awk '{ print $3 }'
 }
@@ -156,4 +148,15 @@ function webm()
 
 function stream {
     ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
+}
+
+
+##### COPYING #####
+
+function xsync () {
+    DIR1=${1}/
+    DIR2=${2}/
+    OPTS="--progress --recursive --ignore-existing --size-only --whole-file"
+    rsync ${OPTS} ${DIR1} ${DIR2}
+    rsync ${OPTS} ${DIR2} ${DIR1}
 }
