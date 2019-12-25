@@ -123,7 +123,7 @@ function liquid {
 
 function webm()
 {
-	ffmpeg -i $1 -c:v libvpx -b:v 1M -c:a libvorbis $1.webm
+    ffmpeg -i $1 -c:v libvpx -b:v 1M -c:a libvorbis $1.webm
 }
 
 function stream {
@@ -163,7 +163,7 @@ alias everyhour='every 1h'
 ##### SELF-DOCUMENTING #####
 
 function lsfun {
-	declare -F | awk '{ print $3 }'
+    declare -F | awk '{ print $3 }'
 }
 
 alias functions='declare -f'
