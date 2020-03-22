@@ -33,7 +33,7 @@
 		'kill-this-buffer)
 
 ;; toggle line truncation on/off
-(global-set-key (kbd "C-c $")
-		'toggle-truncate-lines)
+(global-set-key (kbd "C-c w")
+		'visual-line-mode)
 
 (provide 'gg-keybindings)
