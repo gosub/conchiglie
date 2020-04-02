@@ -126,6 +126,10 @@ function webm()
     ffmpeg -i $1 -c:v libvpx -b:v 1M -c:a libvorbis $1.webm
 }
 
+function stream-setup {
+    sudo modprobe v4l2loopback exclusive_caps=1
+}
+
 function stream {
     ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
 }
