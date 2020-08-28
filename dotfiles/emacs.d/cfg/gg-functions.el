@@ -51,4 +51,11 @@
   (find-file gg-done-file))
 
 
+(defun gg/search-on-youtube ()
+  "search region text on youtube"
+  (interactive)
+  (browse-url (concat "https://www.youtube.com/results?search_query="
+		      (buffer-substring (mark) (point)))))
+
+
 (provide 'gg-functions)
