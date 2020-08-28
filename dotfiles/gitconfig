@@ -12,3 +12,5 @@
 	spellingdictionary = none
 [guitool "vim"]
 	cmd = gvim $FILENAME
+[credentials]
+	helper = store
