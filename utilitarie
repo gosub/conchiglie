@@ -91,6 +91,10 @@ function mp3-dl {
     youtube-dl -x --audio-format mp3 --audio-quality 0 "${1}"
 }
 
+function wav-dl {
+    youtube-dl -x --audio-format wav --audio-quality 0 "${1}"
+}
+
 function ilaria-tag {
     id3v2 --delete-all "$@"
     id3v2 --album "Ilaria" "$@"
@@ -134,6 +138,9 @@ function stream {
     ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
 }
 
+function avi2mp4 {
+    ffmpeg -i $1 -preset slower -crf 12 -b:a 192k $1.mp4
+}
 
 ##### COPYING #####
 
