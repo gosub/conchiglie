@@ -131,6 +131,7 @@ function webm()
 }
 
 function stream-setup {
+    sudo modprobe -r v4l2loopback
     sudo modprobe v4l2loopback exclusive_caps=1
 }
 
