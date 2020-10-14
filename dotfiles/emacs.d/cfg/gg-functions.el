@@ -43,8 +43,9 @@ with double prefix insert full date-time ISO8601 string"
     (replace-match (number-to-string 
                       (1+ (string-to-number (match-string 0)))))))
 
-;; prepare my homepage
+
 (defun gg/apparecchia ()
+  "setup initials buffers and windows as I like them"
   (interactive)
   (eshell)
   (split-window-right)
