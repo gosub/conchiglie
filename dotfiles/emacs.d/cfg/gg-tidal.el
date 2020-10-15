@@ -5,9 +5,9 @@
 	 (sample (nth (random (length dir)) dir)))
     (message  "random tidal sample: %s" sample)))
 
-;; stop all streams
+
 (defun gg/tidal-hush ()
-  "send hush as a single line"
+  "send hush as a single line, stopping all streams"
   (interactive)
   (tidal-send-string ":{")
   (tidal-send-string "hush")
