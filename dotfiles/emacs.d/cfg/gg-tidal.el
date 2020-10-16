@@ -1,9 +1,9 @@
-;; print a random sample from SuperDirt sample folder
 (defun gg/tidal-random-sample ()
+  "print the name of random tidal sample from the SuperDirt sample folder"
   (interactive)
   (let* ((dir (directory-files gg-tidal-sample-folder))
 	 (sample (nth (random (length dir)) dir)))
-    (message  "random tidal sample: %s" sample)))
+    (message "random tidal sample: %s" sample)))
 
 
 (defun gg/tidal-hush ()
