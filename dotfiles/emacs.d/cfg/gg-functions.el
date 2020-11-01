@@ -33,8 +33,8 @@ with double prefix insert full date-time ISO8601 string"
       (yank))))
 
 
-;; partially simulates C-a (increment number at point) from VIM
 (defun gg/increment-number-at-point ()
+  "increment number at point, partially simulating C-a in vim"
   (interactive)
   (save-excursion
     (skip-chars-backward "0123456789")
