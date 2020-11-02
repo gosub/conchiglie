@@ -9,8 +9,8 @@ with double prefix insert full date-time ISO8601 string"
     (insert (format-time-string format-string))))
 
 
-;; search forward and duplicate whole line
 (defun gg/search-forward-and-copy-line ()
+  "search forwards and insert whole line found at point"
   (interactive)
   (let ((p (point)))
     (when (not (null (isearch-forward)))
@@ -20,8 +20,9 @@ with double prefix insert full date-time ISO8601 string"
       (goto-char p)
       (yank))))
 
-;; search backward and duplicate whole line
+
 (defun gg/search-backward-and-copy-line ()
+  "search backward and insert whole line found at point"
   (interactive)
   (let ((p (point)))
     (when (not (null (isearch-backward)))
