@@ -13,8 +13,11 @@
   (tidal-send-string "hush")
   (tidal-send-string ":}"))
 
-;; personal tidal-mode keybindings
+
 (defun gg/tidal-mode-map ()
+  "set personal keybidings for tidal-mode
+C-.        stop all streams, like in SuperCollider IDE
+C-c C-a    print a random sample from the SuperDirt folder"
   (define-key tidal-mode-map (kbd "C-.") 'gg/tidal-hush)
   (define-key tidal-mode-map (kbd "C-c C-a") 'gg/tidal-random-sample))
 
