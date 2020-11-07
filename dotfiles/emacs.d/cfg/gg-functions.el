@@ -69,4 +69,11 @@ with double prefix insert full date-time ISO8601 string"
 		      (buffer-substring (mark) (point)))))
 
 
+(defun gg/search-on-hackernews ()
+  "search region text on hacker news"
+  (interactive)
+  (browse-url (concat "https://hn.algolia.com/?q="
+		      (buffer-substring (mark) (point)))))
+
+
 (provide 'gg-functions)
