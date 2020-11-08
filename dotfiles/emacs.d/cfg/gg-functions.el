@@ -62,4 +62,11 @@ with double prefix insert full date-time ISO8601 string"
 		      (buffer-substring (mark) (point)))))
 
 
+(defun gg/search-on-google ()
+  "search region text on google"
+  (interactive)
+  (browse-url (concat "https://www.google.com/search?q="
+		      (buffer-substring (mark) (point)))))
+
+
 (provide 'gg-functions)
