@@ -1,3 +1,14 @@
+(defun gg/tidal-setup ()
+  "setup the my tidal environment, starting processes and opening files"
+  (interactive)
+  (start-process-shell-command
+   "jack-for-tidal" "*jack-for-tidal*" "jackd -d alsa")
+  (start-process-shell-command
+   "sclang-for-tidal" "*sclang-for-tidal*" "sclang ~/downloads/audio/tidal/superdirt_startup.scd")
+  (find-file "~/downloads/audio/tidal/prova.tidal")
+  (tidal-start-haskell)
+  (delete-window))
+
 (defun gg/tidal-random-sample ()
   "print the name of random tidal sample from the SuperDirt sample folder"
   (interactive)
