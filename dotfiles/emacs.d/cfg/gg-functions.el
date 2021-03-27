@@ -76,4 +76,12 @@ with double prefix insert full date-time ISO8601 string"
 		      (buffer-substring (mark) (point)))))
 
 
+(defun gg/yank-line-at-beginning-of-buffer ()
+  "yank the content of the clipboard at the beginning of the buffer"
+  (interactive)
+  (beginning-of-buffer)
+  (yank)
+  (newline))
+
+
 (provide 'gg-functions)

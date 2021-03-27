@@ -36,4 +36,8 @@
 (global-set-key (kbd "C-c w")
 		'visual-line-mode)
 
+;; yank at beginning of buffer
+(global-set-key (kbd "C-c y")
+		'gg/yank-line-at-beginning-of-buffer)
+
 (provide 'gg-keybindings)
