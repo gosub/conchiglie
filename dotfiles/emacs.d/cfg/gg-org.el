@@ -1,6 +1,7 @@
 (defun gg/org-mode-hook ()
   "disable line numbers in org-mode, too distracting"
-  (display-line-numbers-mode 0))
+  (display-line-numbers-mode 0)
+  (electric-indent-mode -1))
 
 (add-hook 'org-mode-hook 'gg/org-mode-hook)
 
