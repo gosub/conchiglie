@@ -10,4 +10,6 @@
 (setq org-todo-keyword-faces
       '(("ASIDE" . "dark blue")))
 
+(setq org-startup-folded t)
+
 (provide 'gg-org)
