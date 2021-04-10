@@ -39,7 +39,7 @@ function xswitch {
 
 ##### ALIASES #####
 
-alias lsl='ls -lha'
+alias ll='ls -lha'
 alias yargs='xargs -n 1 -d \\n -I {}'
 alias incognito='chromium --incognito'
 
