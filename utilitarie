@@ -92,7 +92,7 @@ function mp3-dl {
 }
 
 function wav-dl {
-    youtube-dl -x --audio-format wav --audio-quality 0 "${1}"
+    youtube-dl -x --audio-format wav --audio-quality 0 --postprocessor-args "-ar 44100" "${1}"
 }
 
 function ilaria-tag {
