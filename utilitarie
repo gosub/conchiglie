@@ -104,6 +104,9 @@ function audiocd {
     mplayer cdda://${1}:1 -cache 1024
 }
 
+function burncd {
+    cdrskin -v dev=1,0,0 speed=48 -sao  -audio "$@"
+}
 
 ##### IMAGE #####
 
