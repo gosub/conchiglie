@@ -55,3 +55,5 @@ hi CursorLine cterm=none
 " visual tabs
 :set list
 :set listchars=tab:»\ 
+" use hard tabs in cpp
+:autocmd FileType cpp setlocal noexpandtab 
