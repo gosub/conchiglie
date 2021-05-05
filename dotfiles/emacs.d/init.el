@@ -20,3 +20,4 @@
 (require 'gg-erlang)
 (require 'gg-keybindings)
 (require 'gg-tidal)
+(require 'gg-cpp)
