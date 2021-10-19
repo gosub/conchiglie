@@ -11,4 +11,8 @@
 
 (require 'erlang-start)
 
+; printable char set is unicode
+(setq inferior-erlang-machine-options
+      '("+pc" "unicode"))
+
 (provide 'gg-erlang)
