@@ -47,13 +47,7 @@ alias incognito='chromium --incognito'
 ##### PYTHON #####
 
 function activate() {
-    while [ $PWD != "/" ]; do
-        if [ -d ".venv" ]; then
-            source .venv/bin/activate
-            break
-        fi
-        cd ..
-    done
+    source `find . -name 'activate' -type f | head -n1`
 }
 
 
