@@ -1,7 +1,7 @@
 # .bashrc for gg
 
 # VCV Rack SDK directory
-export RACK_DIR=~/downloads/audio/Rack-SDK-1.1.6/
+export RACK_DIR=~/downloads/audio/Rack-SDK-2.0.6/
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
