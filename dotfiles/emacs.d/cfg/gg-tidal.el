@@ -1,13 +1,18 @@
 (defun gg/tidal-setup ()
-  "setup the my tidal environment, starting processes and opening files"
+  "setup the my tidal environment, starting processes and opening files, prompting with ido-complete"
   (interactive)
-  (start-process-shell-command
-   "jack-for-tidal" "*jack-for-tidal*" "jackd -d alsa")
-  (start-process-shell-command
-   "sclang-for-tidal" "*sclang-for-tidal*" "sclang ~/downloads/audio/tidal/superdirt_startup.scd")
-  (find-file "~/downloads/audio/tidal/prova.tidal")
-  (tidal-start-haskell)
-  (delete-window))
+  (let*
+      ((tidal-setup-steps-alist '((jack   . (lambda () (start-process-shell-command
+							"jack-for-tidal" "*jack-for-tidal*" "jackd -d alsa")))
+				  (sclang . (lambda () (start-process-shell-command
+							"sclang-for-tidal" "*sclang-for-tidal*" "sclang ~/downloads/audio/tidal/superdirt_startup.scd")))
+				  (file   . (lambda () (find-file "~/downloads/audio/tidal/prova.tidal")))
+				  (hask   . (lambda () (tidal-start-haskell)))))
+       (steps-strings           (mapcar 'symbol-name (mapcar 'car tidal-setup-steps-alist)))
+       (selected-step-string    (ido-completing-read "tidal setup step: " steps-strings))
+       (selected-step-function  (alist-get (intern selected-step-string) tidal-setup-steps-alist)))
+    (funcall selected-step-function)))
+
 
 (defun gg/tidal-random-sample ()
   "print the name of random tidal sample from the SuperDirt sample folder"
