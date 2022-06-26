@@ -2,10 +2,8 @@
   "setup my tidal environment, starting processes and opening files, prompting with ido-complete"
   (interactive)
   (let*
-      ((tidal-setup-steps-alist '((jack   . (lambda () (start-process-shell-command
-							"jack-for-tidal" "*jack-for-tidal*" "jackd -d alsa")))
-				  (sclang . (lambda () (start-process-shell-command
-							"sclang-for-tidal" "*sclang-for-tidal*" "sclang ~/downloads/audio/tidal/superdirt_startup.scd")))
+      ((tidal-setup-steps-alist '((jack   . (lambda () (async-shell-command "jackd -d alsa" "*jack-for-tidal*")))
+				  (sclang . (lambda () (async-shell-command "sclang ~/downloads/audio/tidal/superdirt_startup.scd" "*sclang-for-tidal*")))
 				  (file   . (lambda () (find-file "~/downloads/audio/tidal/prova.tidal")))
 				  (hask   . (lambda () (tidal-start-haskell)))))
        (steps-strings           (mapcar 'symbol-name (mapcar 'car tidal-setup-steps-alist)))
