@@ -1,5 +1,5 @@
 (defun gg/tidal-setup ()
-  "setup the my tidal environment, starting processes and opening files, prompting with ido-complete"
+  "setup my tidal environment, starting processes and opening files, prompting with ido-complete"
   (interactive)
   (let*
       ((tidal-setup-steps-alist '((jack   . (lambda () (start-process-shell-command
