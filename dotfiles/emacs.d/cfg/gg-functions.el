@@ -84,4 +84,20 @@ with double prefix insert full date-time ISO8601 string"
   (newline))
 
 
+(defun gg/yt-playlist-to-org (playlist-url)
+  "turn a youtube playlist link into an org section, where each video is a subsection"
+  (interactive "sPlaylist url or id: ")
+  (let*
+      ((header-cmd (concat "youtube-dl"
+			   " --ignore-errors --get-filename "
+			   " --output '* [[%(uploader)s - %(playlist_title)s][https://www.youtube.com/playlist?list=%(playlist_id)s]]' "
+			   " --playlist-end 1 "))
+       (playlist-header (shell-command-to-string (concat header-cmd playlist-url)))
+       (entries-cmd (concat "youtube-dl"
+			    " --ignore-errors --get-filename "
+			    " --output '** [[%(title)s][https://www.youtube.com/watch?v=%(id)s]]' "))
+       (playlist-entries (shell-command-to-string (concat entries-cmd playlist-url))))
+    (insert (concat "\n" playlist-header playlist-entries "\n"))))
+
+
 (provide 'gg-functions)
