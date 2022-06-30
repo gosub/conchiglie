@@ -90,12 +90,12 @@ with double prefix insert full date-time ISO8601 string"
   (let*
       ((header-cmd (concat "youtube-dl"
 			   " --ignore-errors --get-filename "
-			   " --output '* [[%(uploader)s - %(playlist_title)s][https://www.youtube.com/playlist?list=%(playlist_id)s]]' "
+			   " --output '* [/] [[https://www.youtube.com/playlist?list=%(playlist_id)s][%(uploader)s - %(playlist_title)s]]' "
 			   " --playlist-end 1 "))
        (playlist-header (shell-command-to-string (concat header-cmd playlist-url)))
        (entries-cmd (concat "youtube-dl"
 			    " --ignore-errors --get-filename "
-			    " --output '** [[%(title)s][https://www.youtube.com/watch?v=%(id)s]]' "))
+			    " --output '- [ ] [[https://www.youtube.com/watch?v=%(id)s][%(title)s]]' "))
        (playlist-entries (shell-command-to-string (concat entries-cmd playlist-url))))
     (insert (concat "\n" playlist-header playlist-entries "\n"))))
 
