@@ -7,8 +7,11 @@
 				  (file   . (lambda () (find-file "~/Dropbox/prj/2022/tidal/scratch.tidal")))
 				  (hask   . (lambda () (tidal-start-haskell)))))
        (steps-strings           (mapcar 'symbol-name (mapcar 'car tidal-setup-steps-alist)))
-       (selected-step-string    (ido-completing-read "tidal setup step: " steps-strings))
-       (selected-step-function  (alist-get (intern selected-step-string) tidal-setup-steps-alist)))
+       (numbered-steps          (cl-mapcar (lambda (step num) (concat (number-to-string num) "-" step))
+					   steps-strings (number-sequence 1 (length steps-strings))))
+       (numbered-alist          (cl-pairlis numbered-steps (mapcar 'cdr tidal-setup-steps-alist)))
+       (selected-step-string    (ido-completing-read "tidal setup step: " numbered-steps))
+       (selected-step-function  (alist-get selected-step-string numbered-alist)))
     (funcall selected-step-function)))
 
 
