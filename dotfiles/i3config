@@ -11,8 +11,12 @@ floating_modifier $mod
 
 # start a terminal (gg)
 bindsym $mod+t exec i3-sensible-terminal
-# start browser (gg)
+# start chromium incognito (gg) ## soon to be deprecated
 bindsym $mod+c exec chromium --incognito
+# start firefox in private mode (gg)
+bindsym $mod+w exec firefox --private-window
+# start firefox with current profile (gg)
+bindsym $mod+Shift+w exec firefox
 # start emacs (gg)
 bindsym $mod+e exec emacs
 # kill focused window (gg)
