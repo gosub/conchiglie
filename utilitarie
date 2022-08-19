@@ -98,7 +98,7 @@ function audiocd {
 }
 
 function burncd {
-    cdrskin -v dev=1,0,0 speed=16 -sao  -audio "$@"
+    cdrskin -v dev=/dev/sr0 speed=16 -sao -eject -audio "$@"
 }
 
 ##### IMAGE #####
