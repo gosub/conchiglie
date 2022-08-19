@@ -89,9 +89,6 @@ function wav-dl {
     youtube-dl -x --audio-format wav --audio-quality 0 --postprocessor-args "-ar 44100" "${1}"
 }
 
-function ilaria-tag {
-    id3v2 --delete-all "$@"
-    id3v2 --album "Ilaria" "$@"
 }
 
 function audiocd {
