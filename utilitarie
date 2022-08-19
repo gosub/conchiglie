@@ -89,6 +89,8 @@ function wav-dl {
     youtube-dl -x --audio-format wav --audio-quality 0 --postprocessor-args "-ar 44100" "${1}"
 }
 
+function 2wav {
+    ffmpeg -i "${1}" -ar 44100 "${1%.*}.wav"
 }
 
 function audiocd {
