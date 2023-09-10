@@ -40,4 +40,9 @@
 (global-set-key (kbd "C-c y")
 		'gg/yank-line-at-beginning-of-buffer)
 
+;; copy line at point in kill ring
+;; with format switched between csv and org link
+(global-set-key (kbd "C-c u")
+		'gg/copy-line-at-point-with-switched-link-format)
+
 (provide 'gg-keybindings)
