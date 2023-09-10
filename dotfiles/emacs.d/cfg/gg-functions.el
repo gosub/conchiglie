@@ -110,4 +110,11 @@ with double prefix insert full date-time ISO8601 string"
 	    (match-string 1 string)))))
 
 
+(defun gg/copy-line-at-point-with-switched-link-format ()
+  (interactive)
+  (let ((switched-line-at-point
+	 (gg/switch-csv-and-org-link (thing-at-point 'line t))))
+   (when switched-line-at-point (kill-new switched-line-at-point))))
+
+
 (provide 'gg-functions)
