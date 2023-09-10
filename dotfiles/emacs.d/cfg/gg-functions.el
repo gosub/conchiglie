@@ -117,4 +117,13 @@ with double prefix insert full date-time ISO8601 string"
    (when switched-line-at-point (kill-new switched-line-at-point))))
 
 
+(defun gg/random-emacs-info-node ()
+  "Open a random emacs manual Info node in a side window."
+  (interactive)
+  (let* ((all-nodes (mapcar #'car (Info-toc-nodes "emacs")))
+	 (nodes-count (length all-nodes))
+	 (random-node (nth (random nodes-count) all-nodes)))
+    (info-other-window (concat "(emacs)" random-node))))
+
+
 (provide 'gg-functions)
