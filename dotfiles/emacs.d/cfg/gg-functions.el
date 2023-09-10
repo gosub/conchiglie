@@ -126,4 +126,17 @@ with double prefix insert full date-time ISO8601 string"
     (info-other-window (concat "(emacs)" random-node))))
 
 
+(defun gg/describe-random-interactive-function ()
+  "Display the documentation of a random interactive function."
+  (interactive)
+  (let (all-the-funs)
+    (mapatoms (lambda (sym)
+		(when (and (symbol-function sym)
+			   (commandp (symbol-function sym)))
+		  (push sym all-the-funs))))
+    (describe-function
+     (nth (random (length all-the-funs))
+	  all-the-funs))))
+
+
 (provide 'gg-functions)
