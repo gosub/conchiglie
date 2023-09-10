@@ -100,4 +100,14 @@ with double prefix insert full date-time ISO8601 string"
     (insert (concat "\n" playlist-header playlist-entries "\n"))))
 
 
+(defun gg/switch-csv-and-org-link (string)
+  (cond ((string-match "^....-..-..,\"?\\([^\"]*\\)\"?,\\(.*\\)$" string)
+	 (concat "[[" (match-string 2 string)
+		 "][" (match-string 1 string) "]]"))
+	((string-match "\\[\\[\\(.*\\)\\]\\[\\(.*\\)\\]\\]" string)
+	 (concat (format-time-string "%Y-%m-%d") ",\""
+	    (match-string 2 string) "\","
+	    (match-string 1 string)))))
+
+
 (provide 'gg-functions)
