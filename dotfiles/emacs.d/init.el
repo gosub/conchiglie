@@ -5,6 +5,10 @@
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+;; package configuration
+
+(move-text-default-bindings)
+
 ;; personal customizations (cfg folder, gg- prefix)
 
 (add-to-list 'load-path
