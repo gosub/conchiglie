@@ -19,6 +19,9 @@ bindsym $mod+w exec firefox --private-window
 bindsym $mod+Shift+w exec firefox
 # start emacs (gg)
 bindsym $mod+e exec emacs
+# lock screen and suspend (gg)
+bindsym $mod+l exec --no-startup-id i3lock -c 63b4c1 && systemctl suspend
+
 # kill focused window (gg)
 bindsym $mod+q kill
 # poweroff (gg)
