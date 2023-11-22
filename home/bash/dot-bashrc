@@ -45,6 +45,6 @@ HISTFILESIZE=50000
 shopt -s checkwinsize
 
 # gg personal aliases and functions in 'utilitarie'
-if [ -f ~/Dropbox/prj/2016/conchiglie/utilitarie ]; then
-    . ~/Dropbox/prj/2016/conchiglie/utilitarie
+if [ -f ~/.config/bash/utilitarie ]; then
+    . ~/.config/bash/utilitarie
 fi
