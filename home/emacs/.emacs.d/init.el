@@ -7,7 +7,8 @@
 
 ;; package configuration
 
-(move-text-default-bindings)
+(if (boundp 'move-text-default-bindings)
+  (move-text-default-bindings))
 
 ;; personal customizations (cfg folder, gg- prefix)
 

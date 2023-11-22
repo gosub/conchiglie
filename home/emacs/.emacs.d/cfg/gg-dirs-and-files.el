@@ -23,10 +23,8 @@
 
 
 ; most used files directory
-(setq gg-txt-directory
-      (if (file-directory-p "~/personal/Dropbox")
-	  "~/personal/Dropbox/txt/"
-	  "~/Dropbox/txt/"))
+(setq gg-txt-directory "~/box/txt")
+
 ; notes file
 (setq gg-notes-file
       (expand-file-name "notes.org" gg-txt-directory))
