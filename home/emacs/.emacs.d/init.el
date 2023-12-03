@@ -29,6 +29,8 @@
 ; Fn key is interpreded as <WakeUp>, ignore it
 (global-set-key (kbd "<WakeUp>") 'ignore)
 
+;; personal configurations
+
 (require 'gg-dirs-and-files)
 (require 'gg-functions)
 (require 'gg-ux)
