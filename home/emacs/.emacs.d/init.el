@@ -15,6 +15,15 @@
 (add-to-list 'load-path
 	     (expand-file-name "cfg" user-emacs-directory))
 
+;; packages
+
+(use-package ledger-mode
+  :ensure t)
+
+(use-package magit
+  :ensure t)
+
+
 (require 'gg-dirs-and-files)
 (require 'gg-functions)
 (require 'gg-ux)
