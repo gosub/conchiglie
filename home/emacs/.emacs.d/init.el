@@ -24,6 +24,11 @@
   :ensure t)
 
 
+;; Lenovo E14 gen5 AMD
+
+; Fn key is interpreded as <WakeUp>, ignore it
+(global-set-key (kbd "<WakeUp>") 'ignore)
+
 (require 'gg-dirs-and-files)
 (require 'gg-functions)
 (require 'gg-ux)
