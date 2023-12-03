@@ -4,8 +4,10 @@ linux-firmware
 amd-ucode
 wpa_supplicant
 pipewire
+wireplumber
 pipewire-jack
-pipewire-media-session
+pipewire-alsa
+pipewire-pulse
 man-db
 man-pages
 
