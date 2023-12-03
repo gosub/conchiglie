@@ -21,6 +21,7 @@ less
 python
 nix
 ttf-dejavu
+noto-fonts-emoji
 greetd
 greetd-gtkgreet
 wayland
