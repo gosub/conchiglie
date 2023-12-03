@@ -19,6 +19,7 @@ sudo
 stow
 less
 python
+nix
 ttf-dejavu
 greetd
 greetd-gtkgreet
