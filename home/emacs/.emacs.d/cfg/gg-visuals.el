@@ -1,6 +1,6 @@
 ;; set default font and size
 (set-face-attribute
- 'default nil :family "DejaVu Sans Mono" :height 90)
+ 'default nil :family "Source Code Pro" :height 130)
 
 ;; do not show splash screen
 (setq inhibit-startup-screen 1)
