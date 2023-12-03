@@ -30,6 +30,9 @@ swaybg
 swaylock
 swayidle
 i3status
+brightnessctl
+mako
+wofi
 alacritty
 firefox
 emacs-wayland
