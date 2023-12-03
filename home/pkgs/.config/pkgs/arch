@@ -24,6 +24,9 @@ greetd
 greetd-gtkgreet
 wayland
 sway
+swaybg
+swaylock
+swayidle
 i3status
 alacritty
 firefox
