@@ -40,3 +40,5 @@ ledger
 syncthing
 keepassxc
 qt5-wayland
+glfw-x11
+xorg-xwayland
