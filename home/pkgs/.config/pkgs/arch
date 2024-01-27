@@ -42,3 +42,5 @@ keepassxc
 qt5-wayland
 glfw-x11
 xorg-xwayland
+unzip
+mpv
