@@ -3,6 +3,9 @@
 # VCV Rack SDK directory
 export RACK_DIR=~/downloads/audio/Rack-SDK-2.2.2/
 
+# Force Firefox to use Wayland
+export MOZ_ENABLE_WAYLAND=1
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
