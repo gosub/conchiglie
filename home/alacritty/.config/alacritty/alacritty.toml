@@ -1,0 +1,8 @@
+import = ["/home/gg/.config/alacritty/themes/gruvbox_dark.toml"]
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "SourceCode Pro"
+style = "Regular"
