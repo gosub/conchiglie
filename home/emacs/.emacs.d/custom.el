@@ -5,7 +5,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(magit with-editor ledger-mode)))
+ '(safe-local-variable-values '((org-tags-column . -90))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
