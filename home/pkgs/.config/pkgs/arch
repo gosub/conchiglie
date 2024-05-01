@@ -44,3 +44,7 @@ glfw-x11
 xorg-xwayland
 unzip
 mpv
+zathura
+zathura-pdf-mupdf
+supercollider
+sc3-plugins
