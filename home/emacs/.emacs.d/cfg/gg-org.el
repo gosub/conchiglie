@@ -13,4 +13,6 @@
 
 (setq org-startup-folded t)
 
+(setq org-clock-sound "~/dl/audio/alarm.wav")
+
 (provide 'gg-org)
