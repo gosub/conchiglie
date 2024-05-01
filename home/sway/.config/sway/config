@@ -238,4 +238,6 @@ bar {
     }
 }
 
+xwayland enable
+
 include /etc/sway/config.d/*
