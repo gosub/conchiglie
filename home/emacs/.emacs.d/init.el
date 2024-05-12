@@ -23,6 +23,9 @@
 (use-package magit
   :ensure t)
 
+(use-package evil
+  :ensure t
+  :bind ("C-c v" . evil-local-mode))
 
 ;; Lenovo E14 gen5 AMD
 
@@ -36,7 +39,7 @@
 (require 'gg-ux)
 (require 'gg-visuals)
 (require 'gg-unicode)
-(require 'gg-evil)
+; (require 'gg-evil)
 (require 'gg-org)
 (require 'gg-erlang)
 (require 'gg-keybindings)

@@ -16,10 +16,6 @@
 (global-set-key (kbd "C-c r")
 		'gg/search-backward-and-copy-line)
 
-;; toggle vim in local buffer
-(global-set-key (kbd "<f7>")
-		'evil-local-mode)
-
 ;; magit-status enabled globally
 (global-set-key (kbd "C-x g")
 		'magit-status)
