@@ -1,9 +1,7 @@
 ;; package stuff
 
-(require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
 
 ;; personal customizations (cfg folder, gg- prefix)
 
