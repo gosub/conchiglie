@@ -1,7 +1,7 @@
-;; package stuff
+;; additional package repositories
 
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+  '("melpa" . "https://melpa.org/packages/"))
 
 ;; packages
 
