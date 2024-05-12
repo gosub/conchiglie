@@ -39,7 +39,6 @@
 (require 'gg-ux)
 (require 'gg-visuals)
 (require 'gg-unicode)
-; (require 'gg-evil)
 (require 'gg-org)
 (require 'gg-erlang)
 (require 'gg-keybindings)
