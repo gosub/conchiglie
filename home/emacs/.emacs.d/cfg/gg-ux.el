@@ -14,6 +14,10 @@
 ;; re-enable 'a' in dired
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; use loopback mode in gpg (epa) pin-entry
+;; so it's emacs that asks the password
+(setq epa-pinentry-mode 'loopback)
+
 ;; launch http url in chromium incognito
 (setq browse-url-browser-function
       (quote browse-url-generic))
