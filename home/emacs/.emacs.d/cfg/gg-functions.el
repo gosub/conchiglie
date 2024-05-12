@@ -193,4 +193,24 @@ See URL `https://geohashing.site/' for additional info."
     (browse-url url)))
 
 
+(defun gg/get-string-from-file (filePath)
+  "Return file content as string."
+  (with-temp-buffer
+    (insert-file-contents filePath)
+    (buffer-string)))
+
+
+(defun gg/get-computer-model ()
+  (interactive)
+  (let ((dmi-product-family-file "/sys/devices/virtual/dmi/id/product_family"))
+    (if (file-readable-p dmi-product-family-file)
+	(string-trim (gg/get-string-from-file dmi-product-family-file))
+      "unknown")))
+
+
+(defun gg/is-computer-model? (model)
+  (interactive)
+  (string= model (gg/get-computer-model)))
+
+
 (provide 'gg-functions)

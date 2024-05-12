@@ -27,10 +27,7 @@
   :ensure t
   :bind ("C-c v" . evil-local-mode))
 
-;; Lenovo E14 gen5 AMD
 
-; Fn key is interpreded as <WakeUp>, ignore it
-(global-set-key (kbd "<WakeUp>") 'ignore)
 
 ;; personal configurations
 
