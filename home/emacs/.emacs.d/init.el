@@ -5,11 +5,6 @@
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-;; package configuration
-
-(if (boundp 'move-text-default-bindings)
-  (move-text-default-bindings))
-
 ;; personal customizations (cfg folder, gg- prefix)
 
 (add-to-list 'load-path
@@ -27,6 +22,9 @@
   :ensure t
   :bind ("C-c v" . evil-local-mode))
 
+(use-package move-text
+  :ensure t
+  :config (move-text-default-bindings))
 
 
 ;; personal configurations
