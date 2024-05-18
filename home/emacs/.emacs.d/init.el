@@ -6,7 +6,8 @@
 ;; packages
 
 (use-package ledger-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package magit
   :ensure t)
