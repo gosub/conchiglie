@@ -20,6 +20,21 @@
   :ensure t
   :config (move-text-default-bindings))
 
+(use-package org
+  :defer t
+  :init
+  (setq org-clock-sound
+	"~/dl/audio/alarm.wav")
+  (setq org-todo-keywords
+	'((sequence "TODO" "ASIDE" "DONE")))
+  (setq org-todo-keyword-faces
+	'(("ASIDE" . "dark blue")))
+  (setq org-startup-folded t)
+  :hook
+  (org-mode . (lambda ()
+		"disable line numbers in org-mode, too distracting"
+		(display-line-numbers-mode 0)
+		(electric-indent-mode -1))))
 
 ;; personal customizations (cfg folder, gg- prefix)
 
@@ -34,7 +49,6 @@
 (require 'gg-ux)
 (require 'gg-visuals)
 (require 'gg-unicode)
-(require 'gg-org)
 (require 'gg-erlang)
 (require 'gg-keybindings)
 (require 'gg-tidal)
