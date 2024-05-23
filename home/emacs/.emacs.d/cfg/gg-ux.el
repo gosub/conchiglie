@@ -16,7 +16,7 @@
 
 ;; use loopback mode in gpg (epa) pin-entry
 ;; so it's emacs that asks the password
-(setq epa-pinentry-mode 'loopback)
+(setq epg-pinentry-mode 'loopback)
 
 ;; launch http url in chromium incognito
 (setq browse-url-browser-function
