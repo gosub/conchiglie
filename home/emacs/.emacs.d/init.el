@@ -36,6 +36,10 @@
 		(display-line-numbers-mode 0)
 		(electric-indent-mode -1))))
 
+(use-package sclang
+  :defer t
+  :mode ("\\.scd\\'" . sclang-mode))
+
 ;; personal customizations (cfg folder, gg- prefix)
 
 (add-to-list 'load-path
