@@ -38,6 +38,8 @@
 
 (use-package sclang
   :defer t
+  :commands (sclang-start)
+  :custom (sclang-show-workspace-on-startup nil)
   :mode ("\\.scd\\'" . sclang-mode))
 
 ;; personal customizations (cfg folder, gg- prefix)
