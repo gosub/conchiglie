@@ -3,6 +3,13 @@
 (add-to-list 'package-archives
   '("melpa" . "https://melpa.org/packages/"))
 
+
+;; personal customizations (cfg folder, gg- prefix)
+
+(add-to-list 'load-path
+  (expand-file-name "cfg" user-emacs-directory))
+
+
 ;; packages
 
 (use-package ledger-mode
@@ -41,11 +48,6 @@
   :commands (sclang-start)
   :custom (sclang-show-workspace-on-startup nil)
   :mode ("\\.scd\\'" . sclang-mode))
-
-;; personal customizations (cfg folder, gg- prefix)
-
-(add-to-list 'load-path
-  (expand-file-name "cfg" user-emacs-directory))
 
 
 ;; personal configurations
