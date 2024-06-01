@@ -43,11 +43,16 @@
 		(display-line-numbers-mode 0)
 		(electric-indent-mode -1))))
 
+(use-package gg-sclang-utils)
+
 (use-package sclang
   :defer t
+  :after (gg-sclang-utils)
   :commands (sclang-start)
   :custom (sclang-show-workspace-on-startup nil)
-  :mode ("\\.scd\\'" . sclang-mode))
+  :mode ("\\.scd\\'" . sclang-mode)
+  :bind (:map sclang-mode-map
+	      ("C-<return>" . gg/sclang-eval-dwim)))
 
 
 ;; personal configurations
