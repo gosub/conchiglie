@@ -55,6 +55,8 @@
   :mode ("\\.scd\\'" . sclang-mode)
   :bind (:map sclang-mode-map
 	      ("C-<return>" . gg/sclang-eval-dwim)
+	      ("C-." . sclang-main-stop)
+	      ("C-c t" . gg/sclang-transient)))
 
 
 ;; personal configurations
