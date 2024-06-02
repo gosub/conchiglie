@@ -55,4 +55,28 @@
 	nil))))
 
 
+(transient-define-prefix gg/sclang-transient ()
+  "Transient for sclang-mode common options."
+  [["Control"
+    ("s" "Start SClang" sclang-start :transient t)
+    ("q" "Stop SCLang" sclang-stop)
+    ("k" "Kill SCLang" sclang-kill)
+    ("l" "Recompile classes"  sclang-recompile)]
+   ["Server"
+    ("b" "Boot server" sclang-server-boot)
+    ("t" "Quit server" sclang-server-quit)]
+   ["Navigation"
+    ("w" "Switch to Workspace" sclang-switch-to-workspace)
+    ("p" "Show Post" sclang-show-post-buffer)
+    ("c" "Clear Post" sclang-clear-post-buffer)]
+   ["Help"
+    ("h" "Help GUI" sclang-open-help-gui)
+    ("f" "Find help in GUI" sclang-find-help-in-gui)]
+   ["Record"
+    ("rn" "Prepare for record" sclang-server-prepare-for-record)
+    ("rr" "Start recording" sclang-server-record)
+    ("rs" "Stop recording" sclang-server-stop-recording)
+    ("rp" "Pause recording" sclang-server-pause-recording)]])
+
+
 (provide 'gg-sclang-utils)
