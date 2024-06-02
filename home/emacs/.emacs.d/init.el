@@ -49,10 +49,11 @@
   :defer t
   :after (gg-sclang-utils)
   :commands (sclang-start)
-  :custom (sclang-show-workspace-on-startup nil)
+  :custom
+  (sclang-show-workspace-on-startup nil)
   :mode ("\\.scd\\'" . sclang-mode)
   :bind (:map sclang-mode-map
-	      ("C-<return>" . gg/sclang-eval-dwim)))
+	      ("C-<return>" . gg/sclang-eval-dwim)
 
 
 ;; personal configurations
