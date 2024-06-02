@@ -9,7 +9,7 @@
    ;; if there is a parenthesized section that starts before the point
    ;; when the point is inside of it, eval it
    ;; when the point is outside of it, eval the current line
-   ((gg--search-parenthesized-region-backward) ;; if
+   ((gg--search-parenthesized-region-backward)
     (let* ((pos (point))
 	   (reg (gg--search-parenthesized-region-backward))
 	   (start (car reg))
