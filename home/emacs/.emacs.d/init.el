@@ -51,6 +51,7 @@
   :commands (sclang-start)
   :custom
   (sclang-show-workspace-on-startup nil)
+  (sclang-eval-line-forward nil)
   :mode ("\\.scd\\'" . sclang-mode)
   :bind (:map sclang-mode-map
 	      ("C-<return>" . gg/sclang-eval-dwim)
