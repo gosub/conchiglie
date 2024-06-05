@@ -48,7 +48,7 @@
       (if start
 	  (progn
 	    (goto-char start)
-	    (if (re-search-forward "^)$" nil t)
+	    (if (re-search-forward "^);?$" nil t)
 		(setq end (point)))))
       (if (and start end)
 	  (list start end)
