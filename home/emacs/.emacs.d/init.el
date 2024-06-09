@@ -29,14 +29,13 @@
 
 (use-package org
   :defer t
-  :init
-  (setq org-clock-sound
-	"~/dl/audio/alarm.wav")
-  (setq org-todo-keywords
+  :custom
+  (org-startup-folded t)
+  (org-clock-sound "~/dl/audio/alarm.wav")
+  (org-todo-keywords
 	'((sequence "TODO" "ASIDE" "DONE")))
-  (setq org-todo-keyword-faces
+  (org-todo-keyword-faces
 	'(("ASIDE" . "dark blue")))
-  (setq org-startup-folded t)
   :hook
   (org-mode . (lambda ()
 		"disable line numbers in org-mode, too distracting"
