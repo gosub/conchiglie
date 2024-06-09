@@ -31,6 +31,7 @@
   :defer t
   :custom
   (org-startup-folded t)
+  (org-tags-column 0)
   (org-clock-sound "~/dl/audio/alarm.wav")
   (org-todo-keywords
 	'((sequence "TODO" "ASIDE" "DONE")))
