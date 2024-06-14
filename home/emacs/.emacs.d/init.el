@@ -38,6 +38,8 @@
 	'((sequence "TODO" "ASIDE" "DONE")))
   (org-todo-keyword-faces
 	'(("ASIDE" . "dark blue")))
+  :custom-face
+  (org-ellipsis ((t (:underline nil))))
   :hook
   (org-mode . (lambda ()
 		"disable line numbers in org-mode, too distracting"
