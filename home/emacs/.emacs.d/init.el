@@ -30,6 +30,7 @@
 (use-package org
   :defer t
   :custom
+  (org-ellipsis "⤵")
   (org-startup-folded t)
   (org-tags-column 0)
   (org-clock-sound "~/dl/audio/alarm.wav")
