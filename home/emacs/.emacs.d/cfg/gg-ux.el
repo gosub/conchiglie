@@ -22,8 +22,8 @@
 (setq browse-url-browser-function
       (quote browse-url-generic))
 (setq browse-url-generic-args
-      (quote ("--incognito")))
+      (quote ("--private-window")))
 (setq browse-url-generic-program
-      "chromium")
+      "firefox")
 
 (provide 'gg-ux)
