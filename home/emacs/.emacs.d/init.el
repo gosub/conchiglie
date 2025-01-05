@@ -61,6 +61,11 @@
 	      ("C-." . sclang-main-stop)
 	      ("C-c t" . gg/sclang-transient)))
 
+(use-package ox-hugo
+  :ensure t
+  :pin melpa
+  :after ox)
+
 
 ;; personal configurations
 
