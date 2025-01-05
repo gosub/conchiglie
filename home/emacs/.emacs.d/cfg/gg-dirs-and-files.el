@@ -27,7 +27,7 @@
 
 ; notes file
 (setq gg-notes-file
-      (expand-file-name "notes.org" gg-txt-directory))
+      (expand-file-name "ziba.org" gg-txt-directory))
 ; todo file
 (setq gg-todo-file
       (expand-file-name "todo.org" gg-txt-directory))
