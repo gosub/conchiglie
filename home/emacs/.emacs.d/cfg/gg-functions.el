@@ -1,12 +1,12 @@
 (defun gg/insert-current-date (arg)
   "Insert current date in ISO8601 format (YYY-MM-DD)
-with single prefix insert with DD/MM/YYYY format
-with double prefix insert full date-time ISO8601 string"
-  (interactive "P")
-  (let ((format-string (cond ((equal arg '(4)) "%d/%m/%Y")
-			     ((equal arg '(16)) "%FT%T%:z")
-			     (t "%F"))))
-    (insert (format-time-string format-string))))
+with single prefix insert full date-time ISO8601 string"
+  (interactive "p")
+  (let* ((fmts '("%F" "%FT%T%:z"))
+	(fmt (cl-case arg
+	       (4 (cadr fmts))
+	       (t (car fmts)))))
+    (insert (format-time-string fmt))))
 
 
 (defun gg/search-forward-and-copy-line ()
