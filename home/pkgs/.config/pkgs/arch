@@ -48,4 +48,11 @@ zathura
 zathura-pdf-mupdf
 supercollider
 sc3-plugins
+csound
 ollama
+zip
+bluez
+bluez-utils
+dosfstools
+rsync
+cmake
