@@ -15,6 +15,8 @@ set $browser firefox
 set $browserprivate firefox --private-window
 # editor
 set $editor emacs
+# screenshot
+set $screenshot grim
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -81,6 +83,8 @@ input "type:keyboard" {
     # Start editor
     bindsym $mod+e exec $editor
 
+    # Take screenshot
+    bindsym $mod+p exec $screenshot
 #
 # Media control
 #
