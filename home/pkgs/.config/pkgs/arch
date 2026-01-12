@@ -56,3 +56,5 @@ bluez-utils
 dosfstools
 rsync
 cmake
+grim
+imv
