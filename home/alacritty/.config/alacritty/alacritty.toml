@@ -8,3 +8,8 @@ style = "Regular"
 
 [general]
 import = ["/home/gg/.config/alacritty/themes/gruvbox_dark.toml"]
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
