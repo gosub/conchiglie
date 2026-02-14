@@ -58,3 +58,5 @@ rsync
 cmake
 grim
 imv
+ripgrep
+jq
