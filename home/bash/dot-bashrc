@@ -51,3 +51,6 @@ shopt -s checkwinsize
 if [ -f ~/.config/bash/utilitarie ]; then
     . ~/.config/bash/utilitarie
 fi
+
+# extending $PATH to ~/.local/bin, for Claude!
+export PATH="$HOME/.local/bin:$PATH"
