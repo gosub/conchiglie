@@ -1,7 +1,10 @@
 # .bashrc for gg
 
+# Emacs is my editor <3
+export EDITOR=emacs
+
 # VCV Rack SDK directory
-export RACK_DIR=~/downloads/audio/Rack-SDK-2.2.2/
+export RACK_DIR=~/dl/audio/Rack-SDK-2.2.2/
 
 # Force Firefox to use Wayland
 export MOZ_ENABLE_WAYLAND=1
