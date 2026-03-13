@@ -46,6 +46,7 @@ function xsus {
 alias ll='ls -lha'
 alias yargs='xargs -n 1 -d \\n -I {}'
 alias incognito='chromium --incognito'
+alias ccc='claude --continue'
 
 
 ##### PYTHON #####
