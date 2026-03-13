@@ -4,7 +4,7 @@
 export EDITOR=emacs
 
 # VCV Rack SDK directory
-export RACK_DIR=~/dl/audio/Rack-SDK-2.2.2/
+export RACK_DIR=~/dl/audio/rack-sdk
 
 # Force Firefox to use Wayland
 export MOZ_ENABLE_WAYLAND=1
