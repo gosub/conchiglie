@@ -8,6 +8,8 @@ wireplumber
 pipewire-jack
 pipewire-alsa
 pipewire-pulse
+alsa-utils
+usbutils
 man-db
 man-pages
 base-devel
@@ -19,6 +21,7 @@ sudo
 stow
 less
 python
+python-uv
 nix
 ttf-dejavu
 noto-fonts-emoji
@@ -63,3 +66,5 @@ jq
 go
 tmux
 sox
+gimp
+audacity
