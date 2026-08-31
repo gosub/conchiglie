@@ -224,7 +224,7 @@ bindsym $mod+Shift+e mode "[e]xit [r]eload"
 # old configs
 for_window [class="QjackCtl"] floating enable
 for_window [class="Slgui"] floating enable
-
+for_window [app_id="xdg-desktop-portal-gtk"] floating enable, focus
 
 #
 # Status Bar:
