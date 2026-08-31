@@ -181,3 +181,35 @@ function lsfun {
 }
 
 alias functions='declare -f'
+
+
+##### SWAY #####
+
+
+sway-urgent() {
+    local tree pid con_id
+
+    tree=$(swaymsg -t get_tree) || return 1
+    pid=$$
+
+    while [[ "$pid" != "1" && -n "$pid" ]]; do
+        con_id=$(
+            jq -r --arg pid "$pid" '
+                .. | objects |
+                select(.pid? != null and (.pid | tostring) == $pid) |
+                .id
+            ' <<< "$tree" |
+            head -n1
+        )
+
+        if [[ -n "$con_id" ]]; then
+            swaymsg "[con_id=$con_id]" urgent enable
+            return 0
+        fi
+
+        pid=$(ps -o ppid= -p "$pid" | tr -d ' ')
+    done
+
+    echo "sway-urgent: could not find containing Sway window" >&2
+    return 1
+}
