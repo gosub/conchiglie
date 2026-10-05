@@ -148,11 +148,19 @@ function avi2mp4 {
 ##### COPYING #####
 
 function xsync () {
-    DIR1=${1}/
-    DIR2=${2}/
-    OPTS="--progress --recursive --ignore-existing --size-only --whole-file"
-    rsync ${OPTS} ${DIR1} ${DIR2}
-    rsync ${OPTS} ${DIR2} ${DIR1}
+    if [ $# -lt 2 ] || [ ! -d "$1" ] || [ ! -d "$2" ]; then
+        echo "uso: xsync DIR1 DIR2 [opzioni rsync, es. -n]" >&2
+        return 1
+    fi
+    local a=${1%/}/ b=${2%/}/
+    shift 2
+    local opts=(
+        --recursive --times --modify-window=1 --ignore-existing --human-readable
+	--info=progress2 --exclude='System Volume Information' --exclude='$RECYCLE.BIN'
+        --exclude='.Trash-*' --exclude='.Spotlight-V100' --exclude='.fseventsd'
+        --exclude='.DS_Store' --exclude='._*' "$@"
+    )
+    rsync "${opts[@]}" "$a" "$b" && rsync "${opts[@]}" "$b" "$a" && sync
 }
 
 
