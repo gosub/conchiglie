@@ -88,11 +88,11 @@ function wav2mp3 () {
 }
 
 function mp3-dl {
-    youtube-dl -x --audio-format mp3 --audio-quality 0 "${1}"
+    yt-dlp -x --audio-format mp3 --audio-quality 0 "${1}"
 }
 
 function wav-dl {
-    youtube-dl -x --audio-format wav --audio-quality 0 --postprocessor-args "-ar 44100" "${1}"
+    yt-dlp -x --audio-format wav --audio-quality 0 --postprocessor-args "-ar 44100" "${1}"
 }
 
 function 2wav {
@@ -138,7 +138,7 @@ function stream-setup {
 }
 
 function stream {
-    ffmpeg -re -i $(youtube-dl -g "${1}") -map 0:v -f v4l2 /dev/video0
+    ffmpeg -re -i $(yt-dlp -g "${1}") -map 0:v -f v4l2 /dev/video0
 }
 
 function avi2mp4 {
