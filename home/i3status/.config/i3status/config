@@ -14,6 +14,7 @@ general {
 # order += "ipv6"
 order += "disk /"
 order += "cpu_usage"
+order += "memory"
 order += "cpu_temperature 0"
 order += "wireless _first_"
 order += "ethernet _first_"
@@ -33,9 +34,14 @@ ethernet _first_ {
 }
 
 battery all {
-        format = "%status %percentage (⏳ %remaining)"
+        format = "%status %percentage %remaining"
+        format_percentage = "%.00f%s"
+        hide_seconds = true
 	status_bat = "🔋"
-	status_chr = "🔌"
+	status_chr = "⚡"
+	status_full = "🔌"
+	status_idle = "🔌"
+	status_unk = "❓"
 	low_threshold = 10
 	threshold_type = percentage
 }
@@ -46,6 +52,14 @@ tztime local {
 
 cpu_usage {
         format = "🐎 %usage"
+}
+
+memory {
+        format = "🧠 %percentage_used"
+        memory_used_method = memavailable
+        threshold_degraded = "20%"
+        threshold_critical = "10%"
+        format_degraded = "🧠 %percentage_used (%available free)"
 }
 
 cpu_temperature 0 {
