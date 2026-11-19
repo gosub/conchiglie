@@ -69,3 +69,5 @@ sox
 gimp
 audacity
 zram-generator
+gocryptfs
+pacman-contrib
