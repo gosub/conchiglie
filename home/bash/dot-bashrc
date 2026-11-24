@@ -9,6 +9,17 @@ export RACK_DIR=~/dl/audio/rack-sdk
 # Force Firefox to use Wayland
 export MOZ_ENABLE_WAYLAND=1
 
+# XDG base directories (explicit, so tools can rely on them)
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# Go: keep ~/go out of the home root
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export GOBIN="$HOME/.local/bin"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
