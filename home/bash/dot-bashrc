@@ -12,17 +12,18 @@ export MOZ_ENABLE_WAYLAND=1
 # XDG base directories (explicit, so tools can rely on them)
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
+# XDG_DATA_HOME left unset on purpose: some apps misbehave when it is set
+data_dir="$HOME/.local/share"  # not exported, only used below
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # Go: keep ~/go out of the home root
-export GOPATH="$XDG_DATA_HOME/go"
+export GOPATH="$data_dir/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export GOBIN="$HOME/.local/bin"
 
 # Rust: keep ~/.cargo and ~/.rustup out of the home root
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$data_dir/cargo"
+export RUSTUP_HOME="$data_dir/rustup"
 export CARGO_INSTALL_ROOT="$HOME/.local"  # cargo install -> ~/.local/bin
 
 # npm: cache (and logs, npx) out of ~/.npm
