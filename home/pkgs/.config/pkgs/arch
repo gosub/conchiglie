@@ -3,6 +3,7 @@ linux
 linux-firmware
 amd-ucode
 wpa_supplicant
+wireless-regdb
 pipewire
 wireplumber
 pipewire-jack
