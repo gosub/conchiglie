@@ -55,6 +55,10 @@ export LESSHISTFILE=~/.local/shell/.lesshst
 # put bash history in a better place
 HISTFILE=~/.local/shell/.bash_history
 
+# put python and sqlite REPL histories in the same place
+export PYTHON_HISTORY=~/.local/shell/.python_history
+export SQLITE_HISTORY=~/.local/shell/.sqlite_history
+
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 
