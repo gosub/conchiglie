@@ -25,6 +25,9 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_INSTALL_ROOT="$HOME/.local"  # cargo install -> ~/.local/bin
 
+# npm: cache (and logs, npx) out of ~/.npm
+export npm_config_cache="$XDG_CACHE_HOME/npm"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
